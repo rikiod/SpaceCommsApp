@@ -3,3 +3,6 @@ Today we went over the Unit 2 project and how it'll try and translate between Mo
 
 Journal from Sunday, November 10th for For Loops
 When trying to code the for loops using the language an Arduino uses, C++, the computational logic held true. Thus, making a system diagram for what we had to proved relatively easy. Finding the correct syntax and then coding the actual program was definitely the harder portion. Research had to be done to figure out the proper syntax and all of those related actions. 
+
+Journal from Monday, November 11th 
+Today, we looked at our code for the traffic light problem. From there, we also looked at how to actually run this program on a real arduino rather than a simulated circuit. 
