@@ -1,8 +1,11 @@
 Journal for Monday, November 4th
-Today we went over the Unit 2 project and how it'll try and translate between Morse code and binary. I then detailed this problem in the README of this repository. We also learned a little about arduinos and downloaded the software to use arduinos. 
+	Today we went over the Unit 2 project and how it'll try and translate between Morse code and binary. I then detailed this problem in the README of this repository. We also learned a little about arduinos and downloaded the software to use arduinos. 
 
 Journal from Sunday, November 10th for For Loops
-When trying to code the for loops using the language an Arduino uses, C++, the computational logic held true. Thus, making a system diagram for what we had to proved relatively easy. Finding the correct syntax and then coding the actual program was definitely the harder portion. Research had to be done to figure out the proper syntax and all of those related actions. 
+	When trying to code the for loops using the language an Arduino uses, C++, the computational logic held true. Thus, making a system diagram for what we had to proved relatively easy. Finding the correct syntax and then coding the actual program was definitely the harder portion. Research had to be done to figure out the proper syntax and all of those related actions. 
 
 Journal from Monday, November 11th 
-Today, we looked at our code for the traffic light problem. From there, we also looked at how to actually run this program on a real arduino rather than a simulated circuit. 
+	Today, we looked at our code for the traffic light problem. From there, we also looked at how to actually run this program on a real arduino rather than a simulated circuit. 
+
+Journal from Wednesday, November 13th
+	Today, we looked at how to make a light flash. This included the light blinkng at different intervals. We also tried to do this but with using multiple lights. On top of that, we tried to find a way to convert decimal numbers to binary. Some of the code and circuitry regarding the flashing lights can be found on the README of this repository.
