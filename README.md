@@ -31,7 +31,7 @@ This strategy yields us the number zero as 0 and the number one as 1. From there
 
 ## Representing numbers in binary through LED lights
 How many led lights do you need to show the numbers from 1 to 15?
-Have two led lights. Flash red for one, flash white for zero. Flash both to indicate that another number is coming. 
+Have two led lights. Flash red for one, flash white for zero. 
 
 Here, we can see an LED flashing: 
 
@@ -39,6 +39,7 @@ Here, we can see an LED flashing:
 
 ## Using buttons to trigger lights
 
+Using an Arduino, 
 
 Citations
 ---------
