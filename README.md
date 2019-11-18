@@ -62,7 +62,8 @@ void blinkRed(int t){
 
 Using an Arduino, we can use buttons to trigger lights. While this can simply be done by using a large amount of "if else" statements, this problem can also be solved quite easily with logic gates. By noticing patterns in between inputs and outputs, the logic gates of "or," "and," "not," and "xor" can be used to simplify an equation for the output. 
 
-
+For example, in a scenario in which Button A and Button B not being pressed as well as just Button A being pressed results in a light being pressed, the following code could be created: ` if(digitalRead(!butB)==HIGH); digitalWrite(out1, HIGH);}`.
+These logical gates can be used for a variety of other outputs as well. 
 
 Citations
 ---------
