@@ -33,6 +33,13 @@ This strategy yields us the number zero as 0 and the number one as 1. From there
 How many led lights do you need to show the numbers from 1 to 15?
 Have two led lights. Flash red for one, flash white for zero. Flash both to indicate that another number is coming. 
 
+Here, we can see an LED flashing: 
+
+(insert gif)
+
+## Using buttons to trigger lights
+
+
 Citations
 ---------
 https://www.wikihow.com/Count-in-Binary
