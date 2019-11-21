@@ -100,6 +100,7 @@ Since this project is based around converting numbers from decimal to binary and
 | 1 | 1 | 0 | 6 | 1 | 1 | 1 | 1 | 1 | 0 | 1 |
 | 1 | 1 | 1 | 7 | 1 | 0 | 0 | 0 | 0 | 1 | 1 |
 
+Using this table, we can create equations for each LED 
 
 
 ```.ino
