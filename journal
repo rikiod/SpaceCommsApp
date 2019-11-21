@@ -1,4 +1,4 @@
-Journal: Reflection on What We Learned, what we did, questions I might have, etc.
+Journal: Reflection on what we did, what we learned, what questions I have, to do list
 
 Journal for Monday, November 4th
 	Today we went over the Unit 2 project and how it'll try and translate between Morse code and binary. I then detailed this problem in the README of this repository. We also learned a little about arduinos and downloaded the software to use arduinos. 
@@ -20,3 +20,6 @@ Journal from Tuesday, November 19th
 
 Journal from Wednesday, November 20th
 	Today, we applied everything we've been learning the past two days towards creating a system which utilizes three buttons to show a number using seven segments of LEDs. While I was confused in the beginning, I eventually understood that we had to create a table with all of the possible inputs and then have each one of the seven seperate segments be a different output. Then, we could find one equation for each output and set that to a variable. In the beginning, I actually used "if then" statements though; however, I realized that I needed to change it to a variable to increase efficiency. While I finished all of the coding on this day, I still did not finish the circuitry because I am not completely sure how to hook up seven LEDs to three buttons in a "7-segment" pattern. Thus, I hope I can find the answer to this either online or during the next class. 
+	To Do List:
+	1. See how to hook up seven LEDs to one breadboard
+	2. Work on README file
