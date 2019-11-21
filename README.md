@@ -19,10 +19,29 @@ For this problem, we are trying to solve a communication issue between Earth, th
 For Mars, the planet is only able to send and receive Morse code. For Earth, the planet is only able to send and receive binary. The Moon, therefore, acts as a liason between the two planets and works to translate Morse code into binary or the opposite. However, the operators in these planets can only understand English so each language must be translated into English before being transmitted. 
 
 **Differences between Modern C and Bash** 
+Modern C and Bash both have many similarities; however, they also have many characteristics which demonstrate their differences:
+
+| Modern C        | Bash           | 
+| :-----------: |:-------------:| 
+| Syntax is more forgiving     | More capable | 
+| More resources online      | Runs directly on computer with installation      |   
+| Integrated with hardware (Arduino) | Integrated with computer and can perform actions within OS      |    
 
 Design
 ------
-Learning about types of integers and meaning of void 
+Obtaining a basic understanding or Modern C is essential to being able to design an effective system which can translate binary, English, and morse code. In order to get started with this, let's take a look at the different types of integers within Modern C:
+A boolean is a variable which can only hold two values, true or false which only uses 1 byte. 
+A float is a number which has a decimal point which is stored as 4 bytes. 
+A word stores an unsigned number from 0 to 65,535.
+A long is an extended numerical variable which covers from -2,147,483,648 to 2,147,483,647.
+A char stores a single character as a value. 
+An unsigned char encodes numbers from 0 to 255. 
+An int stores an integer from -32,768 to 32,767. 
+An unsigned int is the same as an int yet it lacks the negative values, resulting in it ranging from 0 to 65,535.
+
+These eight types of variables enable us to cast a wide net and find a variable which meets our own particular needs. While some of they may be multifunctional, it is best to find the one best directed for our needs in order to minimize the memory used storing our variable. 
+
+Another interesting function with Modern C is "void," used for declaring functions. It ensures that the function is expected not to have an output back to its original function. 
 
 Development
 -----------
@@ -68,10 +87,82 @@ For example, in a scenario in which Button A and Button B not being pressed as w
 These logical gates can be used for a variety of other outputs as well. 
 
 ## Converting from decimal to a seven segment number:
-Since this project is based around converting numbers from decimal to binary and morse code, and vice versa, it is useful to practice the use of logic gates by creating a system in which decimal numbers are converted to a seven segment number. To do this, we essentially 
+Since this project is based around converting numbers from decimal to binary and morse code, and vice versa, it is useful to practice the use of logic gates by creating a system in which decimal numbers are converted to a seven segment number. To do this, we essentially made a table in which 
+
+| Button A  | Button B    | Button C     | Decimal Number | A | B | C | D | E | F | G |
+| :----: |:----:| :----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
+| 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |
+| 0 | 1 | 0 | 2 | 1 | 0 | 1 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 3 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
+| 1 | 0 | 0 | 4 | 0 | 1 | 0 | 1 | 1 | 1 | 1 |
+| 1 | 0 | 1 | 5 | 1 | 1 | 0 | 1 | 1 | 0 | 1 |
+| 1 | 1 | 0 | 6 | 1 | 1 | 1 | 1 | 1 | 0 | 1 |
+| 1 | 1 | 1 | 7 | 1 | 0 | 0 | 0 | 0 | 1 | 1 |
+
+
+
+```.ino
+int A = __;
+int B = __;
+int C = __;
+int outA = __;
+int outB = __;
+int outC = __;
+int outD = __;
+int outE = __;
+int outF = __;
+int outG = __;
+
+void setup()
+{
+  pinMode(A, INPUT);
+  pinMode(B, INPUT);
+  pinMode(C, INPUT);
+  pinMode(outA, OUTPUT);
+  pinMode(outB, OUTPUT);
+  pinMode(outC, OUTPUT);
+  pinMode(outD, OUTPUT);
+  pinMode(outE, OUTPUT);
+  pinMode(outF, OUTPUT);
+  pinMode(outG, OUTPUT);    
+}
+
+void loop()
+{
+  // equation for LED A:
+  bool eqA = B || (!A && !C) || (A && C);
+  	digitalWrite(outA, HIGH);
+  
+  // equation for LED B:
+  bool eqB = (A && !B) || (A && !C) || (!B && !C);
+  	digitalWrite(outB, HIGH);
+  
+  // equation for LED C:
+  bool eqC = (!A && !C) || (B && !C);
+  	digitalWrite(outC, HIGH);
+  
+  // equation for LED D:
+  bool eqD = (!A && !C) || (!A && B) || (A && B && !C) || (A && !B && C);
+  	digitalWrite(outD, HIGH);
+  
+  // equation for LED E:
+  bool eqE = C || A || (!A && !B);
+  	digitalWrite(outE, HIGH);
+  
+  // equation for LED F:
+  bool eqF = !A || (B && C) || (A && !B && !C);
+  	digitalWrite(outF, HIGH);
+  
+  // equation for LED G:
+  bool eqG = (B && !C) || (A && !B) || (!A && B);
+  	digitalWrite(out G, HIGH);
+  ```
 
 Citations
 ---------
 https://www.wikihow.com/Count-in-Binary
 https://stackoverflow.com/questions/1043034/what-does-void-mean-in-c-c-and-c/1043107
 https://www.arduino.cc/en/Reference/VariableDeclaration
+https://www.arduino.cc/reference/tr/#variables
+https://javascript.info/logical-operators
