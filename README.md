@@ -100,8 +100,11 @@ Since this project is based around converting numbers from decimal to binary and
 | 1 | 1 | 0 | 6 | 1 | 1 | 1 | 1 | 1 | 0 | 1 |
 | 1 | 1 | 1 | 7 | 1 | 0 | 0 | 0 | 0 | 1 | 1 |
 
-Using this table, we can create equations for each LED 
+Using this table, we can create equations for each LED in the seven segment number (see image below for an example).
 
+![Seven Segment Number](sevenSegment.png)
+
+When you make equations using the logic gates learned earlier, you can form one individual equation and then put set that equal to a boolean to minimize the number of lines needed to code the program. The following code effectively uses logic gates to make a system which lights up a seven-segment number by using three inputs (buttons; base three system) and uses binary. The __ sections within the code can be replaced with the ports in which the LEDs and the buttons are plugged in to in the Arduino.
 
 ```.ino
 int A = __;
