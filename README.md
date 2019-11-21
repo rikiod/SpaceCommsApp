@@ -18,7 +18,12 @@ For this problem, we are trying to solve a communication issue between Earth, th
 
 For Mars, the planet is only able to send and receive Morse code. For Earth, the planet is only able to send and receive binary. The Moon, therefore, acts as a liason between the two planets and works to translate Morse code into binary or the opposite. However, the operators in these planets can only understand English so each language must be translated into English before being transmitted. 
 
-**Differences between Modern C and Bash** 
+**Creating Success Criteria:**
+Who is the client? What is the need? What is the proposed solution? Create success criteria and use your imagination.
+
+The client in this case, NASA, needs to be able to translate binary, morse code, and English. To create a system which performs these actions, we propose 
+
+**Differences between Modern C and Bash:** 
 Modern C and Bash both have many similarities; however, they also have many characteristics which demonstrate their differences:
 
 | Modern C        | Bash           | 
