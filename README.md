@@ -109,25 +109,27 @@ Using this table, we can create equations for each LED in the seven segment numb
 
 ![Seven Segment Number](sevenSegment.png)
 
-When you make equations using the logic gates learned earlier, you can form one individual equation and then put set that equal to a boolean to minimize the number of lines needed to code the program. The following code effectively uses logic gates to make a system which lights up a seven-segment number by using three inputs (buttons; base three system) and uses binary. The __ sections within the code can be replaced with the ports in which the LEDs and the buttons are plugged in to in the Arduino.
+When you make equations using the logic gates learned earlier, you can form one individual equation and then put set that equal to a boolean to minimize the number of lines needed to code the program. The following code effectively uses logic gates to make a system which lights up a seven-segment number by using three inputs (buttons; base three system) and uses binary. The __ sections within the code can be replaced with the ports in which the LEDs and the buttons are plugged in to in the Arduino. The logic gates used to create this equations are shown here:
+
+![Logic Gates](logicGates.png)
 
 ```.ino
-int A = __;
-int B = __;
-int C = __;
-int outA = __;
-int outB = __;
-int outC = __;
-int outD = __;
-int outE = __;
-int outF = __;
-int outG = __;
+int portA = 8;
+int portB = 9;
+int portC = 10;
+int outA = 1;
+int outB = 2;
+int outC = 3;
+int outD = 4;
+int outE = 5;
+int outF = 6;
+int outG = 7;
 
 void setup()
 {
-  pinMode(A, INPUT);
-  pinMode(B, INPUT);
-  pinMode(C, INPUT);
+  pinMode(portA, INPUT);
+  pinMode(portB, INPUT);
+  pinMode(portC, INPUT);
   pinMode(outA, OUTPUT);
   pinMode(outB, OUTPUT);
   pinMode(outC, OUTPUT);
@@ -139,33 +141,38 @@ void setup()
 
 void loop()
 {
+    bool A = digitalRead(portA);
+  	bool B = digitalRead(portB);
+  	bool C = digitalRead(portC);
+  
   // equation for LED A:
   bool eqA = B || (!A && !C) || (A && C);
-  	digitalWrite(outA, HIGH);
+  	digitalWrite(outA, eqA);
   
   // equation for LED B:
   bool eqB = (A && !B) || (A && !C) || (!B && !C);
-  	digitalWrite(outB, HIGH);
+  	digitalWrite(outB, eqB);
   
   // equation for LED C:
   bool eqC = (!A && !C) || (B && !C);
-  	digitalWrite(outC, HIGH);
+  	digitalWrite(outC, eqC);
   
   // equation for LED D:
   bool eqD = (!A && !C) || (!A && B) || (A && B && !C) || (A && !B && C);
-  	digitalWrite(outD, HIGH);
+  	digitalWrite(outD, eqD);
   
   // equation for LED E:
   bool eqE = C || A || (!A && !B);
-  	digitalWrite(outE, HIGH);
+  	digitalWrite(outE, eqD);
   
   // equation for LED F:
   bool eqF = !A || (B && C) || (A && !B && !C);
-  	digitalWrite(outF, HIGH);
+  	digitalWrite(outF, eqF);
   
   // equation for LED G:
   bool eqG = (B && !C) || (A && !B) || (!A && B);
-  	digitalWrite(out G, HIGH);
+  	digitalWrite(outG, eqG);
+}
   ```
 
 Citations
@@ -175,3 +182,4 @@ https://stackoverflow.com/questions/1043034/what-does-void-mean-in-c-c-and-c/104
 https://www.arduino.cc/en/Reference/VariableDeclaration
 https://www.arduino.cc/reference/tr/#variables
 https://javascript.info/logical-operators
+https://circuitdigest.com/microcontroller-projects/7-segment-display-interfacing-with-arduino
