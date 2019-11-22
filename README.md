@@ -174,7 +174,8 @@ void loop()
   	digitalWrite(outG, eqG);
 }
   ```
-Here is the circuit for the code above: it ... sevenSegmentCircuit.png
+  
+Here is the circuit for the code above: 
 ![Seven Segment Circuit](sevenSegmentCircuit.png)
 
 Citations
