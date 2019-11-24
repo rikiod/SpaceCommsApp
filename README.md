@@ -16,12 +16,15 @@ Planning
 **Defining the Problem:**
 For this problem, we are trying to solve a communication issue between Earth, the Moon, and Mars. Essentially, each location has transmittors and receivers which are only capable of receiving two pieces of information. 
 
-For Mars, the planet is only able to send and receive Morse code. For Earth, the planet is only able to send and receive binary. The Moon, therefore, acts as a liason between the two planets and works to translate Morse code into binary or the opposite. However, the operators in these planets can only understand English so each language must be translated into English before being transmitted. 
+For Mars, the planet is only able to send and receive binary. For Earth, the planet is only able to send and receive morse code. The Moon, therefore, acts as a liason between the two planets and works to translate Morse code into binary or the opposite. However, the operators in these planets can only understand English so each language must be translated into English before being transmitted. 
 
 **Creating Success Criteria:**
 Who is the client? What is the need? What is the proposed solution? Create success criteria and use your imagination.
 
 The client in this case, NASA, needs to be able to translate binary, morse code, and English. To create a system which performs these actions, we propose 
+
+**System Diagram:**
+My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
 
 **Differences between Modern C and Bash:** 
 Modern C and Bash both have many similarities; however, they also have many characteristics which demonstrate their differences:
