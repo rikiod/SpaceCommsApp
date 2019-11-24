@@ -23,3 +23,6 @@ Journal from Wednesday, November 20th
 	To Do List:
 	1. See how to hook up seven LEDs to one breadboard
 	2. Work on README file
+	
+Journal from Friday, Novemebr 22nd
+Today. we worked on creating the circuit which can have the seven segment number. I still didn't understand how to correctly hook everything up but I finally got the code to work. My question is how to attach seven separate LEDs and also how to use the built in seven segment display. We also got assigned which planet we would be working on: I am working on Earth so my responsibility is to translate from morse code to English and vice versa. We then worked on creating a system diagram to begin our work for this project. 
