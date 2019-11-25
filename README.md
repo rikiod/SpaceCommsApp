@@ -37,6 +37,8 @@ Modern C and Bash both have many similarities; however, they also have many char
 
 Design
 ------
+
+**Modern C**
 Obtaining a basic understanding or Modern C is essential to being able to design an effective system which can translate binary, English, and morse code. In order to get started with this, let's take a look at the different types of integers within Modern C:
 1. A boolean is a variable which can only hold two values, true or false which only uses 1 byte. 
 2. A float is a number which has a decimal point which is stored as 4 bytes. 
@@ -50,6 +52,11 @@ Obtaining a basic understanding or Modern C is essential to being able to design
 These eight types of variables enable us to cast a wide net and find a variable which meets our own particular needs. While some of they may be multifunctional, it is best to find the one best directed for our needs in order to minimize the memory used storing our variable. 
 
 Another interesting function with Modern C is "void," used for declaring functions. It ensures that the function is expected not to have an output back to its original function. 
+
+**Usability & Human-centered Design (HCD)**
+Usability is essentially how easily something can be learned and used [1], specifically for a human-made technology. This is especially relevant to concepts such as something being intuitive, elegant, or clear. 
+
+Meanwhile, human-centered design 
 
 Development
 -----------
@@ -189,3 +196,8 @@ https://www.arduino.cc/en/Reference/VariableDeclaration
 https://www.arduino.cc/reference/tr/#variables
 https://javascript.info/logical-operators
 https://circuitdigest.com/microcontroller-projects/7-segment-display-interfacing-with-arduino
+
+References:
+[1] "What is Usability?" retreived from https://www.interaction-design.org/literature/topics/usability (25 Nov 2019)
+[2] 
+https://www.interaction-design.org/literature/topics/usability
