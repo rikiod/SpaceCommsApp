@@ -23,6 +23,9 @@ Who is the client? What is the need? What is the proposed solution? Create succe
 
 The client in this case, NASA, needs to be able to translate binary, morse code, and English. To create a system which performs these actions, we propose 
 
+1. Must be able to enter English
+2. Must have only two inputs
+
 **System Diagram:**
 My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
 
@@ -56,8 +59,7 @@ Another interesting function with Modern C is "void," used for declaring functio
 **Usability & Human-centered Design (HCD)**
 Usability is essentially how easily something can be learned and used [1], specifically for a human-made technology. This is especially relevant to concepts such as something being intuitive, elegant, or clear. 
 
-Meanwhile, human-centered design 
-
+At the core of human-centered design is feedback and discoverability [2].
 Development
 -----------
 ## Counting with binary:
@@ -199,5 +201,4 @@ https://circuitdigest.com/microcontroller-projects/7-segment-display-interfacing
 
 References:
 [1] "What is Usability?" retreived from https://www.interaction-design.org/literature/topics/usability (25 Nov 2019)
-[2] 
-https://www.interaction-design.org/literature/topics/usability
+[2] Posner, Joe and Mars, Romam "It's not you. Bad doors are everywhere." 2016. Retrieved (25 Nov 2019)
