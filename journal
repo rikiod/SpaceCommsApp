@@ -26,3 +26,6 @@ Journal from Wednesday, November 20th
 	
 Journal from Friday, Novemebr 22nd
 Today. we worked on creating the circuit which can have the seven segment number. I still didn't understand how to correctly hook everything up but I finally got the code to work. My question is how to attach seven separate LEDs and also how to use the built in seven segment display. We also got assigned which planet we would be working on: I am working on Earth so my responsibility is to translate from morse code to English and vice versa. We then worked on creating a system diagram to begin our work for this project. 
+
+Journal from Monday, November 25th, 2019
+We worked on creating the input methods to enter English into our future program. We did this by having two buttons and then trying to create a system in which the program cycles through letters and numbers of the English alphabet. Then, when a button is pressed, one of the letters or numbers is put down. It was difficult to find code in which the system cycles through all of the different characters but I eventually used a while loop. While I believe I have all of the pseudocode done, I still need to figure out the exact syntax and circuitry for this system as well.  
