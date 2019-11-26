@@ -60,6 +60,9 @@ Another interesting function with Modern C is "void," used for declaring functio
 Usability is essentially how easily something can be learned and used [1], specifically for a human-made technology. This is especially relevant to concepts such as something being intuitive, elegant, or clear. 
 
 At the core of human-centered design is feedback and discoverability [2].
+
+**What is the volatile data type in Arduino?**
+
 Development
 -----------
 ## Counting with binary:
