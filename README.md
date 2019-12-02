@@ -25,6 +25,7 @@ The client in this case, NASA, needs to be able to translate binary, morse code,
 
 1. Must be able to enter English
 2. Must have only two inputs
+3. May use as many LEDs (outputs) as needed 
 
 **System Diagram:**
 My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
