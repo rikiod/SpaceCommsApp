@@ -1,5 +1,4 @@
 
-![Mars Decoding Image](marsImage.png)
 Unit 2
 ======
 
@@ -12,6 +11,8 @@ Contents
   1. [Development](#development)
   1. [Evalution](#evaluation)
   1. [Citations](#citations)
+
+![Mars Decoding Image](marsImage.png)
 
 Planning
 ----------
