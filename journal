@@ -19,7 +19,7 @@ Journal from Tuesday, November 19th
 	On this day, we practiced more with using logic gates by looking at diagrams at then creating logic equations. From there, we did the opposite and created diagrams for logic equations. Then, we simplified K-map tables into logic equations and finally, applied all of this to a real question related to an alarm system within a house. These activities were quite helpful in that they helped me to better understand logic equations and especially how to create the most simplified equations possible by factoring. In addition, creating a table of binary addition and multiplication helped me to better understand how to create equations for inputs and outputs. 
 
 Journal from Wednesday, November 20th
-	Today, we applied everything we've been learning the past two days towards creating a system which utilizes three buttons to show a number using seven segments of LEDs. While I was confused in the beginning, I eventually understood that we had to create a table with all of the possible inputs and then have each one of the seven seperate segments be a different output. Then, we could find one equation for each output and set that to a variable. In the beginning, I actually used "if then" statements though; however, I realized that I needed to change it to a variable to increase efficiency. While I finished all of the coding on this day, I still did not finish the circuitry because I am not completely sure how to hook up seven LEDs to three buttons in a "7-segment" pattern. Thus, I hope I can find the answer to this either online or during the next class. 
+	Today, we applied everything we've been learning the past two days towards creating a system which utilizes three buttons to show a number using seven segments of LEDs. While I was confused in the beginning, I eventually understood that we had to create a table with all of the possible inputs and then have each one of the seven seperate segments be a different output. Then, we could find one equation for each output and set that to a variable. In the beginning, I actually used "if then" statements though; however, I realized that I needed to change it to a variable to increase efficiency. While I finished all of the coding on this day, I still did not finish the circuitry because I am not completely sure how to hook up seven LEDs to three buttons in a "7-segment" pattern. Thus, I hope I can find the answer to this enaither online or during the next class. 
 	To Do List:
 	1. See how to hook up seven LEDs to one breadboard
 	2. Work on README file
@@ -37,5 +37,6 @@ Journal from Monday, December 2nd, 2019
 Questions from today: How to display msg in English? How to switch between input and sending? Switch between morse and binary? how to send binary?
 we learned about computer architecture:
 computer consists of cpu, memory, devices (keyboard, monitor, etc.). the cpu has control over memory and has t
-
 how many symbols do we need to send/how many bits do we need to use (using 0 and 1)
+
+we then created a circuit with the LCD display and also created a system diagram for the English input system. we did not have enough time to test it and actually see how well it worked, however. 
