@@ -12,38 +12,38 @@ Contents
   1. [Evalution](#evaluation)
   1. [Citations](#citations)
 
-![Mars Decoding Image](marsImage.png)
-
 Planning
 ----------
 **Defining the Problem:**
-For this problem, we are trying to solve a communication issue between Earth, the Moon, and Mars. Essentially, each location has transmittors and receivers which are only capable of receiving two pieces of information. 
+It's 2050. Humans have made it to Mars; however, communication between Mars, the Moon, and Earth has become a big issue. Despite the massive technological improvements made in order to get to Mars, it has proven difficult for NASA to send enough supplies to the planetary bodies. Thus, each location only has transmittors and receivers only capable of receiving and sending two pieces of information. 
 
 For Mars, the planet is only able to send and receive binary. For Earth, the planet is only able to send and receive morse code. The Moon, therefore, acts as a liason between the two planets and works to translate Morse code into binary or the opposite. However, the operators in these planets can only understand English so each language must be translated into English before being transmitted. 
 
-**Creating Success Criteria:**
-Who is the client? What is the need? What is the proposed solution? Create success criteria and use your imagination.
+I propose a new Arduino based system which would have a variety of functions as listed in the Success Criteria. This system hopes to be as simple to use as possible so it can easily be edited and also does not require a lot of resources, something necesarry in an unfamiliar and far planet. In addition, the system needs to be easy to initiate, making it simple enough to create on the Moon and Mars. 
 
-The client in this case, NASA, needs to be able to translate binary, morse code, and English. To create a system which performs these actions, we propose 
-
-1. Must be able to enter English
-2. Must have only two inputs
-3. May use as many LEDs (outputs) as needed 
-
-**System Diagram:**
-My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
-
-**Differences between Modern C and Bash:** 
-Modern C and Bash both have many similarities; however, they also have many characteristics which demonstrate their differences:
+**Proposed Solution:**
+I will create a Modern C program to address these issues. Modern C is being used because NASA needs to further develop a communication system which makes efficient use of the limited supplies on the Moon and Mars and Modern C doesn't require very rugged hardware to be run. Compared to my previous Project 1 repository, there are a few main resources in whhich Modern C is being used in addition to the fact that it is what we are learning in class currently: 
 
 | Modern C        | Bash           | 
 | :-----------: |:-------------:| 
 | Syntax is more forgiving     | More capable | 
 | More resources online      | Runs directly on computer with installation      |   
-| Integrated with hardware (Arduino) | Integrated with computer and can perform actions within OS      |    
+| Integrated with hardware (Arduino) | Integrated with computer and can perform actions within OS      | 
+
+The client in this case, NASA, needs to be able to translate binary, morse code, and English. To create a system which performs these actions, we propose a program in which **TALK ABOUT WHAT THE PROGRAM WILL ACTUALLY DO**
+
+**Success Criteria:**
+1. Communication between Earth and Mars uses Morse code.
+2. Communication between Mars and the Moon uses Binary code.
+3. A communication system that allow station workers to communicate seamlessly using English.
+4. Keyboard input on each station is limited to 2 push buttons. 
+5. 100W lights and buzzers are used efficiently.
 
 Design
 ------
+
+**System Diagram:**
+My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
 
 **Modern C**
 Obtaining a basic understanding or Modern C is essential to being able to design an effective system which can translate binary, English, and morse code. In order to get started with this, let's take a look at the different types of integers within Modern C:
@@ -80,6 +80,7 @@ How many led lights do you need to show the numbers from 1 to 15? Have two led l
 We began to answer this question by seeing how Arduino can be used to make a single LED flash. Here, we can see an LED flashing: 
 
 ![](IMB_qgi5zR.GIF)
+**Fig. 1** This gif demonstrates 
 
 While this is simply one flash, the program can be adjusted for additional LEDs and also for different timed pulses of light. The code is quite simple for something such as a single light flash:
 ```.ino
