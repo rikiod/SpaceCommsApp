@@ -331,13 +331,21 @@ In addition, an autopredictive system for words would improve the system. This s
 
 Citations
 ---------
+
 [1] "Language Reference" retrieved from https://www.arduino.cc/reference/tr/#variables. Retrieved (20 Nov 2019)
+
 [2] "What is Usability?" retreived from https://www.interaction-design.org/literature/topics/usability. Retrieved (25 Nov 2019)
+
 [3] Posner, Joe and Mars, Romam. "It's not you. Bad doors are everywhere." 2016. Retrieved (25 Nov 2019)
+
 [4] wikiHow Staff. "How to Count in Binary" retrieved from https://www.wikihow.com/Count-in-Binary. 2 Apr 2019. Retrieved (20 Nov 2019)
+
 [5] Raja, Dilip. "7 Segment Display Interfacing with Arduino" retrieved from https://circuitdigest.com/microcontroller-projects/7-segment-display-interfacing-with-arduino. 6 Jun 2015. Retrieved (20 Nov 2019)
+
 [6] "Logical Operators" retrieved from https://javascript.info/logical-operators. 15 Nov 2019. Retrieved (20 Nov 2019)
+
 [7] "attachInterrupt()" retrieved from https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/. Retrieved (25 Nov 2019).
+
 [8] "Tutorial 13: How to use Arrays with Arduino" retrieved from https://www.programmingelectronics.com/tutorial-13-how-to-use-arrays-with-arduino/. Retrieved (26 Nov 2019)
 
 
