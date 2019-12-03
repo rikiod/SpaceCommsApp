@@ -307,12 +307,17 @@ Evaluation
 
 **Fulfillment of Success Criteria:**
 ![Fulfillment on Success Criteria](criteria.png)
-**Fig. 5:** Shows
 
-Explanation of the program's capabilities and why it's relfected like that with success criteria
+**Fig. 5:** Shows the completion of success criteria for this project. The infrastructure for this project was completed as seen by how the operators were able to communicate in English, there were only two inputs, and lights/buzzers have been used sparingly and efficiently. While we weren't able to communicate in morse and binary between the planetary bodies yet, we were able to create the infrastructure for creating these programs, This provides us room in the future to continue developing these sections and as a result, meeting our client's needs. 
 
+As of right now, our program has the English input system in which two inputs are used -- the program and the circuitry have both been documented for this in the development section. 
 
 **Future Improvements:**
+While this project has been fairly fleshed out, there is still a lot of work that needs to be done in order to achieve full functionality. Firstly, actually establishing a translation system from English to binary and morse code is necesarry to finish the communication system. While the binary translation formula has been researched, further information on morse code needs to be gathered. From there, this translation system needs to be incorporated with the rest of the already developed code. 
+
+Once all of these success criteria are finished, there are other aspects of the program which could be simply improved for the future. Firstly, efficiency could be improved so that the words per minute communicated would be increased. This could be done by simply increasing the number of inputs or, within the English input system, making it so that one can cycle through the arrays by going either left or right instead of just right. This would make it quicker to reach the wanted character and then make messages sent quicker.
+
+In addition, an autopredictive system for words would improve the system. This system could use patterns in phrases or artificial intelligence to predict the wanted word or sentence, thus making the system more efficient. 
 
 
 Citations
