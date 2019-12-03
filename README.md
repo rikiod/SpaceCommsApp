@@ -47,7 +47,8 @@ Design
 
 **System Diagram:**
 ![System Diagram](systemDiagram.png)
-**Fig. 1:** System diagram showing inputs and outputs
+
+**Fig. 1:** System diagram showing inputs and outputs of the proposed system. The 
 
 My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
 
@@ -69,7 +70,7 @@ Another interesting function with Modern C is "void," used for declaring functio
 
 **Usability & Human-centered Design (HCD)**
 
-Usability is essentially how easily something can be learned and used [1], specifically for a human-made technology. This is especially relevant to concepts such as something being intuitive, elegant, or clear. At the core of human-centered design is feedback and discoverability [2].
+Usability is essentially how easily something can be learned and used [1](#Citations), specifically for a human-made technology. This is especially relevant to concepts such as something being intuitive, elegant, or clear. At the core of human-centered design is feedback and discoverability [2].
 
 For such a endeavor such as initiating communication between Earth, the Moon, and Mars, it is crucial for the final product to be intuitive and easy to use. This way, time is not spent learning how to use the product, but rather spent on actually sending messages.
 
@@ -227,7 +228,7 @@ The first key portion of this program is the array. It is used to define a set o
 Another crucial part of this program is the interruptions. Rather than checking if a button is pressed with if-then statements, we can have the Arduino run other processes and then interupt this procces when the button on pin 2 or 3 is pressed. After an interuption, the Arduino goes back to the process which was running before interuption.
 
 The code below can also be represented with the following flow diagram: 
-![Diagram for English Input](diagramEnglish.png)
+![Diagram for English Input](system.png)
 
 ```.ino
 // include the library code:
@@ -321,13 +322,14 @@ In addition, an autopredictive system for words would improve the system. This s
 
 Citations
 ---------
-https://www.wikihow.com/Count-in-Binary
-https://stackoverflow.com/questions/1043034/what-does-void-mean-in-c-c-and-c/1043107
-https://www.arduino.cc/en/Reference/VariableDeclaration
-https://www.arduino.cc/reference/tr/#variables
-https://javascript.info/logical-operators
-https://circuitdigest.com/microcontroller-projects/7-segment-display-interfacing-with-arduino
 
-References:
-[1] "What is Usability?" retreived from https://www.interaction-design.org/literature/topics/usability (25 Nov 2019)
-[2] Posner, Joe and Mars, Romam "It's not you. Bad doors are everywhere." 2016. Retrieved (25 Nov 2019)
+[1] "What is Usability?" retreived from https://www.interaction-design.org/literature/topics/usability. Retrieved (25 Nov 2019)
+[2] Posner, Joe and Mars, Romam. "It's not you. Bad doors are everywhere." 2016. Retrieved (25 Nov 2019)
+[3] wikiHow Staff. "How to Count in Binary" retrieved from https://www.wikihow.com/Count-in-Binary. 2 Apr 2019. Retrieved (20 Nov 2019)
+[4] "Language Reference" retrieved from https://www.arduino.cc/reference/tr/#variables. Retrieved (20 Nov 2019)
+[5] "Logical Operators" retrieved from https://javascript.info/logical-operators. 15 Nov 2019. Retrieved (20 Nov 2019)
+[6] Raja, Dilip. "7 Segment Display Interfacing with Arduino" retrieved from https://circuitdigest.com/microcontroller-projects/7-segment-display-interfacing-with-arduino. 6 Jun 2015. Retrieved (20 Nov 2019)
+[7] "attachInterrupt()" retrieved from https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/. Retrieved (25 Nov 2019).
+[8] "Tutorial 13: How to use Arrays with Arduino" retrieved from https://www.programmingelectronics.com/tutorial-13-how-to-use-arrays-with-arduino/. Retrieved (26 Nov 2019)
+
+
