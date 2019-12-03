@@ -227,7 +227,7 @@ The first key portion of this program is the array. It is used to define a set o
 Another crucial part of this program is the interruptions. Rather than checking if a button is pressed with if-then statements, we can have the Arduino run other processes and then interupt this procces when the button on pin 2 or 3 is pressed. After an interuption, the Arduino goes back to the process which was running before interuption.
 
 The code below can also be represented with the following flow diagram: 
-
+![Diagram for English Input](diagramEnglish.png)
 
 ```.ino
 // include the library code:
