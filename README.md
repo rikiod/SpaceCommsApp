@@ -124,6 +124,7 @@ These logical gates can be used for a variety of other outputs as well as detail
 Since this project is based around converting numbers from decimal to binary and morse code, and vice versa, it is useful to practice the use of logic gates by creating a system in which decimal numbers are converted to a seven segment number. To do this, we essentially made a table in which 
 
 **Table 1** This table 
+
 | Button A  | Button B    | Button C     | Decimal Number | A | B | C | D | E | F | G |
 | :----: |:----:| :----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
