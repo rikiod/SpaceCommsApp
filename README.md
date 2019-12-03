@@ -32,7 +32,7 @@ I will create a Modern C program to address these issues. Modern C is being used
 | More resources online      | Runs directly on computer with installation      |   
 | Integrated with hardware (Arduino) | Integrated with computer and can perform actions within OS      | 
 
-The client in this case, NASA, needs to be able to translate binary, morse code, and English. To create a system which performs these actions, we propose a program in which **TALK ABOUT WHAT THE PROGRAM WILL ACTUALLY DO**
+The client in this case, NASA, needs to be able to translate binary, morse code, and English. To create a system which performs these actions, we propose a program in which the operator inputs the message through English through two buttons which cycle through an array on a LCD display. From there, the message is translated using a program which converts it to binary or morse code and communicates it to the other planet. From there, the morse or binary is translated back into English and displayed to the operator there. From this, we can form a set of success criteria to guide our progress through this misison.
 
 **Success Criteria:**
 
@@ -318,7 +318,6 @@ While this project has been fairly fleshed out, there is still a lot of work tha
 Once all of these success criteria are finished, there are other aspects of the program which could be simply improved for the future. Firstly, efficiency could be improved so that the words per minute communicated would be increased. This could be done by simply increasing the number of inputs or, within the English input system, making it so that one can cycle through the arrays by going either left or right instead of just right. This would make it quicker to reach the wanted character and then make messages sent quicker.
 
 In addition, an autopredictive system for words would improve the system. This system could use patterns in phrases or artificial intelligence to predict the wanted word or sentence, thus making the system more efficient. 
-
 
 Citations
 ---------
