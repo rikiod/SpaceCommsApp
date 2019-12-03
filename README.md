@@ -1,9 +1,10 @@
+
+![Mars Decoding Image](marsImage.png)
 Unit 2
 ======
 
 An English, morse, and binary translation program to theoretically enable communication between Earth, the Moon, and Mars, coded in Modern C and run on an Arduino UNO. 
 
-![Mars Decoding Image](marsImage.png)
 Contents
 -----
   1. [Planning](#planning)
