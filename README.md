@@ -1,7 +1,7 @@
 Unit 2
 ======
 
-A translation program to <>, coded in Modern C and run on an Arduino IDE. 
+An English, morse, and binary translation program to theoretically enable communication between Earth, the Moon, and Mars, coded in Modern C and run on an Arduino UNO. 
 
 Contents
 -----
