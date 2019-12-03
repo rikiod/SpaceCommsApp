@@ -45,6 +45,8 @@ Design
 ------
 
 **System Diagram:**
+![System Diagram](systemDiagram.png)
+**Fig. 1:** System diagram showing inputs and outputs
 
 My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
 
