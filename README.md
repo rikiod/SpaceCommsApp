@@ -306,7 +306,7 @@ Evaluation
 ----------
 
 **Fulfillment of Success Criteria:**
-![Fulfillment on Success Criteria](name.png)
+![Fulfillment on Success Criteria](criteria.png)
 **Fig. 5:** Shows
 
 Explanation of the program's capabilities and why it's relfected like that with success criteria
