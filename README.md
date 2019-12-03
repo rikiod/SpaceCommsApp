@@ -135,6 +135,7 @@ Since this project is based around converting numbers from decimal to binary and
 Using this table, we can create equations for each LED in the seven segment number (see image below for an example).
 
 ![Seven Segment Number](sevenSegment.png)
+
 **Fig. 2** This is a seven segment number, 
 
 When you make equations using the logic gates learned earlier, you can form one individual equation and then put set that equal to a boolean to minimize the number of lines needed to code the program. The following code effectively uses logic gates to make a system which lights up a seven-segment number by using three inputs (buttons; base three system) and uses binary. The logic gates used to create this equations are shown here:
@@ -209,9 +210,8 @@ void loop()
 Here is the circuit for the code above: 
 ![Seven Segment Circuit](sevenSegmentCircuit.png)
 
-**Ifjewif:**
+**English Input System:**
 
-Sinewc
 
 Citations
 ---------
