@@ -313,7 +313,8 @@ Evaluation
 ----------
 
 **Fulfillment of Success Criteria:**
-**Table 2** The table below shows the completion of the success criteria as outline in the [planning](#Planning) stage of this document.
+
+**Table 3** The table below shows the completion of the success criteria as outline in the [planning](#Planning) stage of this document.
 
 ![Fulfillment on Success Criteria](criteria.png)
 
