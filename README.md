@@ -1,5 +1,5 @@
 
-Unit 2: Interplanetary Communication System
+Unit 2
 ======
 
 An English, morse, and binary translation program to theoretically enable communication between Earth, the Moon, and Mars, coded in Modern C and run on an Arduino UNO. 
@@ -216,6 +216,92 @@ Here is the circuit for the code above:
 
 **5. English Input System:**
 
+In our program, it is important for the operators to be able to input and receive in English. However, since we only have two buttons as an input, we have to develop an English input system which is different from a traditional keyboard, instead using two buttons. 
+
+Our first edition was made using a matrix. 
+
+Our second edition as seen below, supplied by our teacher, utilizes interrupt functions to effectively achieve our goal. The program calibrates an LCD screen and then and then, using the interrupt functions, used two buttons to cycle through the letters in the array.
+
+The first key portion of this program is the array. It is used to define a set of arguments that will be used in the program, eventually becoming a string. In an array, the number of arguments also needs to be defined as it is put inside of the brackets. Arguments are separated with commas and in ' '. 
+
+Another crucial part of this program is the interruptions. Rather than checking if a button is pressed with if-then statements, we can have the Arduino run other processes and then interupt this procces when the button on pin 2 or 3 is pressed. After an interuption, the Arduino goes back to the process which was running before interuption.
+
+The code below can also be represented with the following flow diagram: 
+
+
+```.ino
+// include the library code:
+#include <LiquidCrystal.h>
+int index = 0; 
+// add all the letters and digits to the keyboard
+String keyboard[]={"A", "B", "C", "D", "SENT", "DEL"};
+String text = "";
+int numOptions = 6;
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 9, 8);
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(keyboard[index]);
+  lcd.setCursor(0, 1);
+  lcd.print(text);
+  delay(100);
+}
+
+//This function changes the letter in the keyboard
+void changeLetter(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    index++;
+      //check for the max row number
+    if(index==numOptions){
+      index=0; //loop back to first row
+    } 
+ }
+}
+
+//this function adds the letter to the text or send the msg
+void selected(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    
+    String key = keyboard[index];
+    if (key == "DEL")
+    {
+      int len = text.length();
+      text.remove(len-1);
+    }
+    else if(key == "SENT")
+    {
+      text="";
+    }else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+ ```
+ 
 Evaluation
 ----------
 
@@ -225,7 +311,9 @@ Evaluation
 
 Explanation of the program's capabilities and why it's relfected like that with success criteria
 
+
 **Future Improvements:**
+
 
 Citations
 ---------
