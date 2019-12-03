@@ -44,14 +44,14 @@ Design
 
 **Modern C**
 Obtaining a basic understanding or Modern C is essential to being able to design an effective system which can translate binary, English, and morse code. In order to get started with this, let's take a look at the different types of integers within Modern C:
-① A boolean is a variable which can only hold two values, true or false which only uses 1 byte. 
-② A float is a number which has a decimal point which is stored as 4 bytes. 
-③ A word stores an unsigned number from 0 to 65,535.
-④ A long is an extended numerical variable which covers from -2,147,483,648 to 2,147,483,647.
-⑤ A char stores a single character as a value. 
-⑥ An unsigned char encodes numbers from 0 to 255. 
-⑦ An int stores an integer from -32,768 to 32,767. 
-⑧ An unsigned int is the same as an int yet it lacks the negative values, resulting in it ranging from 0 to 65,535.
+1. A boolean is a variable which can only hold two values, true or false which only uses 1 byte. 
+2. A float is a number which has a decimal point which is stored as 4 bytes. 
+3. A word stores an unsigned number from 0 to 65,535.
+4. A long is an extended numerical variable which covers from -2,147,483,648 to 2,147,483,647.
+5. A char stores a single character as a value. 
+6. An unsigned char encodes numbers from 0 to 255. 
+7. An int stores an integer from -32,768 to 32,767. 
+8. An unsigned int is the same as an int yet it lacks the negative values, resulting in it ranging from 0 to 65,535.
 
 These eight types of variables enable us to cast a wide net and find a variable which meets our own particular needs. While some of they may be multifunctional, it is best to find the one best directed for our needs in order to minimize the memory used storing our variable. 
 
