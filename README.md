@@ -1,5 +1,5 @@
 
-Unit 2
+Unit 2: Interplanetary Communication System
 ======
 
 An English, morse, and binary translation program to theoretically enable communication between Earth, the Moon, and Mars, coded in Modern C and run on an Arduino UNO. 
@@ -75,13 +75,13 @@ For such a endeavor such as initiating communication between Earth, the Moon, an
 
 Development
 -----------
-**Counting with binary:**
+**1. Counting with binary:**
 
 We first learned to count with binary, a necessary step for converting data from English to binary and vice versa. Essentially, in binary, you start off by representing zero as one. Then, whenever the last digit is zero, you change the number to one. 
 
 This strategy yields us the number zero as 0 and the number one as 1. From there, however, it gets slightly more complicated. Whenever the last digit is one, then you add another one which would result in 2 but is formatted as 10. Thus, number three would be represented as 10. From there on, the same strategy could be used to receive all the numbers from zero to fifteen: 0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111. 
 
-**Representing numbers in binary through LED lights:**
+**2. Representing numbers in binary through LED lights:**
 
 How many led lights do you need to show the numbers from 1 to 15? Have two led lights. Flash red for one, flash white for zero.
 
@@ -112,14 +112,14 @@ void blinkRed(int t){
 }
 ```
 
-**Using buttons to trigger lights:**
+**3. Using buttons to trigger lights:**
 
 Using an Arduino, we can use buttons to trigger lights. While this can simply be done by using a large amount of "if else" statements, this problem can also be solved quite easily with logic gates. By noticing patterns in between inputs and outputs, the logic gates of "or," "and," "not," and "xor" can be used to simplify an equation for the output. 
 
 For example, in a scenario in which Button A and Button B not being pressed or just Button A being pressed results in a light being pressed, the following code could be created: ` if(digitalRead(!butB)==HIGH); digitalWrite(out1, HIGH);}`.
 These logical gates can be used for a variety of other outputs as well as detailed further in this document. 
 
-**Converting from decimal to a seven segment number:**
+**4. Converting from decimal to a seven segment number:**
 
 Since this project is based around converting numbers from decimal to binary and morse code, and vice versa, it is useful to practice the use of logic gates by creating a system in which decimal numbers are converted to a seven segment number. To do this, we essentially made a table in which 
 
@@ -214,8 +214,18 @@ void loop()
 Here is the circuit for the code above: 
 ![Seven Segment Circuit](sevenSegmentCircuit.png)
 
-**English Input System:**
+**5. English Input System:**
 
+Evaluation
+----------
+
+**Fulfillment of Success Criteria:**
+![Fulfillment on Success Criteria](name.png)
+**Fig. 5:** Shows
+
+Explanation of the program's capabilities and why it's relfected like that with success criteria
+
+**Future Improvements:**
 
 Citations
 ---------
