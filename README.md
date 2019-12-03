@@ -26,6 +26,8 @@ I propose a new Arduino based system which would have a variety of functions as 
 
 I will create a Modern C program to address these issues. Modern C is being used because NASA needs to further develop a communication system which makes efficient use of the limited supplies on the Moon and Mars and Modern C doesn't require very rugged hardware to be run. Compared to my previous Project 1 repository, there are a few main resources in whhich Modern C is being used in addition to the fact that it is what we are learning in class currently: 
 
+**Table 1** Shows the differences between Modern C and Bash so that the two lanauges can be evaluated against each other.
+
 | Modern C        | Bash           | 
 | :-----------: |:-------------:| 
 | Syntax is more forgiving     | More capable | 
@@ -48,13 +50,13 @@ Design
 **System Diagram:**
 ![System Diagram](systemDiagram.png)
 
-**Fig. 1:** System diagram showing inputs and outputs of the proposed system. The 
+**Fig. 1:** System diagram showing inputs and outputs of the proposed system. The Arduino is also shown and it's functions, while elementary, are explained. 
 
 My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
 
 **Modern C:**
 
-Obtaining a basic understanding or Modern C is essential to being able to design an effective system which can translate binary, English, and morse code. In order to get started with this, let's take a look at the different types of integers within Modern C:
+Obtaining a basic understanding or Modern C is essential to being able to design an effective system which can translate binary, English, and morse code. In order to get started with this, let's take a look at the different types of integers within Modern C [1](#Citations)
 1. A boolean is a variable which can only hold two values, true or false which only uses 1 byte. 
 2. A float is a number which has a decimal point which is stored as 4 bytes. 
 3. A word stores an unsigned number from 0 to 65,535.
@@ -70,7 +72,7 @@ Another interesting function with Modern C is "void," used for declaring functio
 
 **Usability & Human-centered Design (HCD)**
 
-Usability is essentially how easily something can be learned and used [1](#Citations), specifically for a human-made technology. This is especially relevant to concepts such as something being intuitive, elegant, or clear. At the core of human-centered design is feedback and discoverability [2].
+Usability is essentially how easily something can be learned and used [2](#Citations), specifically for a human-made technology. This is especially relevant to concepts such as something being intuitive, elegant, or clear. At the core of human-centered design is feedback and discoverability [3](#Citations).
 
 For such a endeavor such as initiating communication between Earth, the Moon, and Mars, it is crucial for the final product to be intuitive and easy to use. This way, time is not spent learning how to use the product, but rather spent on actually sending messages.
 
@@ -78,9 +80,8 @@ Development
 -----------
 **1. Counting with binary:**
 
-We first learned to count with binary, a necessary step for converting data from English to binary and vice versa. Essentially, in binary, you start off by representing zero as one. Then, whenever the last digit is zero, you change the number to one. 
+We first learned to count with binary [4](#Citations), a necessary step for converting data from English to binary and vice versa. Essentially, in binary, you start off by representing zero as one. Then, whenever the last digit is zero, you change the number to one. 
 
-This strategy yields us the number zero as 0 and the number one as 1. From there, however, it gets slightly more complicated. Whenever the last digit is one, then you add another one which would result in 2 but is formatted as 10. Thus, number three would be represented as 10. From there on, the same strategy could be used to receive all the numbers from zero to fifteen: 0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111. 
 
 **2. Representing numbers in binary through LED lights:**
 
@@ -89,9 +90,9 @@ How many led lights do you need to show the numbers from 1 to 15? Have two led l
 We began to answer this question by seeing how Arduino can be used to make a single LED flash. Here, we can see an LED flashing: 
 
 ![](IMB_qgi5zR.GIF)
-**Fig. 1** This gif shows a single LED flashing, run on the code below.
+**Fig. 2** This gif shows a single LED flashing, run on the code below.
 
-While Fig 1 only simply shows a single flash, the program can be adjusted for additional LEDs and also for different timed pulses of light. The code is quite simple for something such as a single light flash:
+While Fig 2 only simply shows a single flash, the program can be adjusted for additional LEDs and also for different timed pulses of light. The code is quite simple for something such as a single light flash:
 ```.ino
 int redLED = 13;
 
@@ -124,7 +125,7 @@ These logical gates can be used for a variety of other outputs as well as detail
 
 Since this project is based around converting numbers from decimal to binary and morse code, and vice versa, it is useful to practice the use of logic gates by creating a system in which decimal numbers are converted to a seven segment number. To do this, we essentially made a table in which 
 
-**Table 1** This table 
+**Table 2** This table shows the first step necesarry to take when creating the logic operator equations for a seven segment equation. 
 
 | Button A  | Button B    | Button C     | Decimal Number | A | B | C | D | E | F | G |
 | :----: |:----:| :----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
@@ -141,12 +142,13 @@ Using this table, we can create equations for each LED in the seven segment numb
 
 ![Seven Segment Number](sevenSegment.png)
 
-**Fig. 2** This is a seven segment number, 
+**Fig. 3** A seven segment number with the proper corresponding letters to Table 2. 
 
-When you make equations using the logic gates learned earlier, you can form one individual equation and then put set that equal to a boolean to minimize the number of lines needed to code the program. The following code effectively uses logic gates to make a system which lights up a seven-segment number by using three inputs (buttons; base three system) and uses binary. The logic gates used to create this equations are shown here:
+When you make equations using the logic gates learned earlier, you can form one individual equation and then put set that equal to a boolean to minimize the number of lines needed to code the program [5](Citations). The following code effectively uses logic gates to make a system which lights up a seven-segment number by using three inputs (buttons; base three system) and uses binary. The logic gates used to create this equations are shown here:
 
 ![Logic Gates](logicGates.png)
-**Fig. 3** The logic gates as shown above can address
+
+**Fig. 4** The logic gates as shown above can address a variety of different functions and are necessary to create an efficient seven segment display [6](Citations). 
 
 Below is the code for lighting up a seven segment number using a base three system. 
 
@@ -215,6 +217,8 @@ void loop()
 Here is the circuit for the code above: 
 ![Seven Segment Circuit](sevenSegmentCircuit.png)
 
+**Fig. 5** The circuit used to run a seven segment display on, compatible with the code as seen above. 
+
 **5. English Input System:**
 
 In our program, it is important for the operators to be able to input and receive in English. However, since we only have two buttons as an input, we have to develop an English input system which is different from a traditional keyboard, instead using two buttons. 
@@ -223,12 +227,14 @@ Our first edition was made using a matrix; however, it wasn't able to be fully c
 
 Our second edition as seen below, supplied by our teacher, utilizes interrupt functions to effectively achieve our goal. The program calibrates an LCD screen and then and then, using the interrupt functions, used two buttons to cycle through the letters in the array.
 
-The first key portion of this program is the array. It is used to define a set of arguments that will be used in the program, eventually becoming a string. In an array, the number of arguments also needs to be defined as it is put inside of the brackets. Arguments are separated with commas and in ' '. 
+The first key portion of this program is the array [7](Citations). It is used to define a set of arguments that will be used in the program, eventually becoming a string. In an array, the number of arguments also needs to be defined as it is put inside of the brackets. Arguments are separated with commas and in ' '. 
 
-Another crucial part of this program is the interruptions. Rather than checking if a button is pressed with if-then statements, we can have the Arduino run other processes and then interupt this procces when the button on pin 2 or 3 is pressed. After an interuption, the Arduino goes back to the process which was running before interuption.
+Another crucial part of this program is the interruptions [8](Citations). Rather than checking if a button is pressed with if-then statements, we can have the Arduino run other processes and then interupt this procces when the button on pin 2 or 3 is pressed. After an interuption, the Arduino goes back to the process which was running before interuption.
 
 The code below can also be represented with the following flow diagram: 
 ![Diagram for English Input](system.png)
+
+**Fig. 6** The flow diagram for the code below. Interrupt functions, while they are not if functions, are represented in this manner because of their similar usage. It is important to note, however, that interrupt functions actually are waiting for, say, x, to happen, rather than constantly checking if x has happened. Thus, using these interrupt functions makes our program not only more simple but also more efficient. 
 
 ```.ino
 // include the library code:
@@ -307,9 +313,11 @@ Evaluation
 ----------
 
 **Fulfillment of Success Criteria:**
+**Table 2** The table below shows the completion of the success criteria as outline in the [planning](#Planning) stage of this document.
+
 ![Fulfillment on Success Criteria](criteria.png)
 
-**Fig. 5:** Shows the completion of success criteria for this project. The infrastructure for this project was completed as seen by how the operators were able to communicate in English, there were only two inputs, and lights/buzzers have been used sparingly and efficiently. While we weren't able to communicate in morse and binary between the planetary bodies yet, we were able to create the infrastructure for creating these programs, This provides us room in the future to continue developing these sections and as a result, meeting our client's needs. 
+The infrastructure for this project was completed as seen by how the operators were able to communicate in English, there were only two inputs, and lights/buzzers have been used sparingly and efficiently. While we weren't able to communicate in morse and binary between the planetary bodies yet, we were able to create the infrastructure for creating these programs, This provides us room in the future to continue developing these sections and as a result, meeting our client's needs. 
 
 As of right now, our program has the English input system in which two inputs are used -- the program and the circuitry have both been documented for this in the development section. 
 
@@ -322,13 +330,12 @@ In addition, an autopredictive system for words would improve the system. This s
 
 Citations
 ---------
-
-[1] "What is Usability?" retreived from https://www.interaction-design.org/literature/topics/usability. Retrieved (25 Nov 2019)
-[2] Posner, Joe and Mars, Romam. "It's not you. Bad doors are everywhere." 2016. Retrieved (25 Nov 2019)
-[3] wikiHow Staff. "How to Count in Binary" retrieved from https://www.wikihow.com/Count-in-Binary. 2 Apr 2019. Retrieved (20 Nov 2019)
-[4] "Language Reference" retrieved from https://www.arduino.cc/reference/tr/#variables. Retrieved (20 Nov 2019)
-[5] "Logical Operators" retrieved from https://javascript.info/logical-operators. 15 Nov 2019. Retrieved (20 Nov 2019)
-[6] Raja, Dilip. "7 Segment Display Interfacing with Arduino" retrieved from https://circuitdigest.com/microcontroller-projects/7-segment-display-interfacing-with-arduino. 6 Jun 2015. Retrieved (20 Nov 2019)
+[1] "Language Reference" retrieved from https://www.arduino.cc/reference/tr/#variables. Retrieved (20 Nov 2019)
+[2] "What is Usability?" retreived from https://www.interaction-design.org/literature/topics/usability. Retrieved (25 Nov 2019)
+[3] Posner, Joe and Mars, Romam. "It's not you. Bad doors are everywhere." 2016. Retrieved (25 Nov 2019)
+[4] wikiHow Staff. "How to Count in Binary" retrieved from https://www.wikihow.com/Count-in-Binary. 2 Apr 2019. Retrieved (20 Nov 2019)
+[5] Raja, Dilip. "7 Segment Display Interfacing with Arduino" retrieved from https://circuitdigest.com/microcontroller-projects/7-segment-display-interfacing-with-arduino. 6 Jun 2015. Retrieved (20 Nov 2019)
+[6] "Logical Operators" retrieved from https://javascript.info/logical-operators. 15 Nov 2019. Retrieved (20 Nov 2019)
 [7] "attachInterrupt()" retrieved from https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/. Retrieved (25 Nov 2019).
 [8] "Tutorial 13: How to use Arrays with Arduino" retrieved from https://www.programmingelectronics.com/tutorial-13-how-to-use-arrays-with-arduino/. Retrieved (26 Nov 2019)
 
