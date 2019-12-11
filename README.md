@@ -309,12 +309,48 @@ void selected(){
 }
  ```
  
+ **6. English to Morse Translation System:**
+ 
+ Despite the fact that we gathered the message that the user wanted to communicate in English, we still need to translate it to morse code in order to transmit it to the Moon. From here, we conducted a feasibility study to see what the best method would be to communicate. Since morse code is traditionally automatically recorded, the fact that we are using manual and visual lights means we need to adapt our system.
+ 
+**Table 3** The table below shows the pros and cons of using a time-based Morse system in which a dot would be represented by the light being on for one second. If the light were on for three seconds, that would be a dash. Meanwhile, spaces between letters and words would be represented by different lengths of the light being off. 
+
+| Pros  | Cons    |
+| :----: |:----:| 
+| Appears to be easier to code | May be difficult to differentiate flashes of light | 
+| Only uses one light | Slow to send messages | 
+| More energy efficient | Need to wait to understand what's being sent |
+
+**Table 4** The table below shows the pros and cons of using a two light Morse system. This system would use two lights in which if both were on, a dash is communicated. If one is on and the other is off, a dot would be sent. If both were off, nothing would be sent. 
+
+| Pros  | Cons  |
+| :----: |:----:|
+| Easier to read than time-based | May be more complicated | 
+| Need to watch instead of wait | Hard to differentiate between spaces | 
+| Immediately know what's happening | Hard to differentiate between messages |
+
+Comparing these two tables, we came to the conclusion that having a two light system would better suit our needs. Now, knowing that, communicating with those who were developing the code for the Moon (recieving our message) was crucial. We established a standard for inter-planetary morse code communication so that we would know exactly what was being transmitted.
+1. The default time for a light to be turned on is one second. 
+2. If light A is off and light B is on, a dot is being transmitted. 
+3. If both light A and light B is on, a dash is being transmitted.
+4. If both Light A and B is off, the system is off and not transmitting. 
+5. If both light A and B flash five times for 0.5 seconds each, the transmission is beginning or ending. 
+
+After developing this common standard, code needs to be developed. There are six main steps to create a functioning morse translation program:
+1. Define "dot" and "dash" as separate functions so they don't need to be restated for each letter.
+2. Blink light rapidly to signify that transmission is beginning.
+3. Use a for loop to cycle through each letter within the user inputted "text" string.
+4. Use a switch case to see which letter to translate, then transmit it simultaneously using the light.
+5. Repeat until all of the letters within the string are sent. 
+6. Blink light rapidly to signify that the message has been sent and the transmission is complete. 
+
+ 
 Evaluation
 ----------
 
 **Fulfillment of Success Criteria:**
 
-**Table 3** The table below shows the completion of the success criteria as outline in the [planning](#Planning) stage of this document.
+**Table 5** The table below shows the completion of the success criteria as outline in the [planning](#Planning) stage of this document.
 
 ![Fulfillment on Success Criteria](criteria.png)
 
