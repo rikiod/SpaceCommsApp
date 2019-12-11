@@ -40,3 +40,16 @@ computer consists of cpu, memory, devices (keyboard, monitor, etc.). the cpu has
 how many symbols do we need to send/how many bits do we need to use (using 0 and 1)
 
 we then created a circuit with the LCD display and also created a system diagram for the English input system. we did not have enough time to test it and actually see how well it worked, however. 
+
+Journal from Wednesday, December 4th, 2019:
+Today we looked at the English input program that we already had and then worked on displaying the letters on an LCD screen with two buttons. We made created a system diagram for the English input program (can be found on classroom and in README) and then created two LCD screens connected to an Arduino. We worked in our planetary teams. We couldn't get it to work though, so hopefully next class we can get it to work. I learned about what a potentiometer is today (a resistor which can have the resistance adjusted). Additionally, we learned about how an LCD screen needs to be configured for it to work; however, all of that information is stored in the Arduino. 
+
+Journal from Tuesday, December 10th, 2019:
+Today, we continued to work on the LCD screen and buttons to input English. We got it to work after configuring the program correctly on the computer -- the main issue was that the Arduino wasn't selected through the correct port. After this, we worked on psuedocode on how to actually translate the text entered by the user into morse code (Earth's job). While we gathered that we should use a for loop and a switch, we still weren't exactly sure how to take one letter out of the string. Next time, we need to work on actually coding this and also making an LCD with the buttons in TinkerCad so we can virtually test our program. 
+What I learned: switch, configuring Arduino, morse code, morse code limitations 
+
+Journal from Wednesday, December 11th, 2019:
+Today we were assigned homework on researching one part of the Arduino (I picked analog comparator) and researching it, creating a slides presentation, and presenting it at the next class on Friday. From here, we have time to continue work on the project of translating our English into morse code. We debated between using one light based on time or two lights to communicate morse. We ended up making a pro and con table to detail this. After that, we, the Earth team, started coded the program. We used a for loop to cycle through each letter in the "text" string and then used a "switch" to create the code for each letter. We also called separate functions of "dot" and "dash" so that our code would be as minimal as possible. Next time, we need to test our code to see how it actually works.
+
+Journal from Friday, December 13th, 2019:
+Today was the last day before winter break. We 
