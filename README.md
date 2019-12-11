@@ -26,7 +26,7 @@ I propose a new Arduino based system which would have a variety of functions as 
 
 I will create a Modern C program to address these issues. Modern C is being used because NASA needs to further develop a communication system which makes efficient use of the limited supplies on the Moon and Mars and Modern C doesn't require very rugged hardware to be run. Compared to my previous Project 1 repository, there are a few main resources in whhich Modern C is being used in addition to the fact that it is what we are learning in class currently: 
 
-**Table 1** Shows the differences between Modern C and Bash so that the two lanauges can be evaluated against each other.
+**Table 1:** Shows the differences between Modern C and Bash so that the two lanauges can be evaluated against each other.
 
 | Modern C        | Bash           | 
 | :-----------: |:-------------:| 
@@ -90,7 +90,7 @@ How many led lights do you need to show the numbers from 1 to 15? Have two led l
 We began to answer this question by seeing how Arduino can be used to make a single LED flash. Here, we can see an LED flashing: 
 
 ![](IMB_qgi5zR.GIF)
-**Fig. 2** This gif shows a single LED flashing, run on the code below.
+**Fig. 2:** This gif shows a single LED flashing, run on the code below.
 
 While Fig 2 only simply shows a single flash, the program can be adjusted for additional LEDs and also for different timed pulses of light. The code is quite simple for something such as a single light flash:
 ```.ino
@@ -125,7 +125,7 @@ These logical gates can be used for a variety of other outputs as well as detail
 
 Since this project is based around converting numbers from decimal to binary and morse code, and vice versa, it is useful to practice the use of logic gates by creating a system in which decimal numbers are converted to a seven segment number. To do this, we essentially made a table in which 
 
-**Table 2** This table shows the first step necesarry to take when creating the logic operator equations for a seven segment equation. 
+**Table 2:** The first step necesarry to take when creating the logic operator equations for a seven segment equation: creating a truth table.  
 
 | Button A  | Button B    | Button C     | Decimal Number | A | B | C | D | E | F | G |
 | :----: |:----:| :----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
@@ -142,13 +142,13 @@ Using this table, we can create equations for each LED in the seven segment numb
 
 ![Seven Segment Number](sevenSegment.png)
 
-**Fig. 3** A seven segment number with the proper corresponding letters to Table 2. 
+**Fig. 3:** A seven segment number with the proper corresponding letters to Table 2. 
 
 When you make equations using the logic gates learned earlier, you can form one individual equation and then put set that equal to a boolean to minimize the number of lines needed to code the program [5](Citations). The following code effectively uses logic gates to make a system which lights up a seven-segment number by using three inputs (buttons; base three system) and uses binary. The logic gates used to create this equations are shown here:
 
 ![Logic Gates](logicGates.png)
 
-**Fig. 4** The logic gates as shown above can address a variety of different functions and are necessary to create an efficient seven segment display [6](Citations). 
+**Fig. 4:** The logic gates as shown above can address a variety of different functions and are necessary to create an efficient seven segment display [6](Citations). 
 
 Below is the code for lighting up a seven segment number using a base three system. 
 
@@ -217,7 +217,7 @@ void loop()
 Here is the circuit for the code above: 
 ![Seven Segment Circuit](sevenSegmentCircuit.png)
 
-**Fig. 5** The circuit used to run a seven segment display on, compatible with the code as seen above. 
+**Fig. 5:** The circuit used to run a seven segment display on, compatible with the code as seen above. 
 
 **5. English Input System:**
 
@@ -234,7 +234,7 @@ Another crucial part of this program is the interruptions [8](Citations). Rather
 The code below can also be represented with the following flow diagram: 
 ![Diagram for English Input](system.png)
 
-**Fig. 6** The flow diagram for the code below. Interrupt functions, while they are not if functions, are represented in this manner because of their similar usage. It is important to note, however, that interrupt functions actually are waiting for, say, x, to happen, rather than constantly checking if x has happened. Thus, using these interrupt functions makes our program not only more simple but also more efficient. 
+**Fig. 6:** The flow diagram for the code below. Interrupt functions, while they are not if functions, are represented in this manner because of their similar usage. It is important to note, however, that interrupt functions actually are waiting for, say, x, to happen, rather than constantly checking if x has happened. Thus, using these interrupt functions makes our program not only more simple but also more efficient. 
 
 ```.ino
 // include the library code:
@@ -313,7 +313,7 @@ void selected(){
  
  Despite the fact that we gathered the message that the user wanted to communicate in English, we still need to translate it to morse code in order to transmit it to the Moon. From here, we conducted a feasibility study to see what the best method would be to communicate. Since morse code is traditionally automatically recorded, the fact that we are using manual and visual lights means we need to adapt our system.
  
-**Table 3** The table below shows the pros and cons of using a time-based Morse system in which a dot would be represented by the light being on for one second. If the light were on for three seconds, that would be a dash. Meanwhile, spaces between letters and words would be represented by different lengths of the light being off. 
+**Table 3:** The pros and cons of using a time-based Morse system in which a dot would be represented by the light being on for one second. If the light were on for three seconds, that would be a dash. Meanwhile, spaces between letters and words would be represented by different lengths of the light being off. 
 
 | Pros  | Cons    |
 | :----: |:----:| 
@@ -321,7 +321,7 @@ void selected(){
 | Only uses one light | Slow to send messages | 
 | More energy efficient | Need to wait to understand what's being sent |
 
-**Table 4** The table below shows the pros and cons of using a two light Morse system. This system would use two lights in which if both were on, a dash is communicated. If one is on and the other is off, a dot would be sent. If both were off, nothing would be sent. 
+**Table 4:** The advantages and disadvantages of using a two light Morse system. This system would use two lights in which if both were on, a dash is communicated. If one is on and the other is off, a dot would be sent. If both were off, nothing would be sent. 
 
 | Pros  | Cons  |
 | :----: |:----:|
@@ -350,7 +350,7 @@ Evaluation
 
 **Fulfillment of Success Criteria:**
 
-**Table 5** The table below shows the completion of the success criteria as outline in the [planning](#Planning) stage of this document.
+**Table 5:** The completion of the success criteria as outline in the [planning](#Planning) stage of this document.
 
 ![Fulfillment on Success Criteria](criteria.png)
 
