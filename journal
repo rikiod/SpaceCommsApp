@@ -52,4 +52,4 @@ Journal from Wednesday, December 11th, 2019:
 Today we were assigned homework on researching one part of the Arduino (I picked analog comparator) and researching it, creating a slides presentation, and presenting it at the next class on Friday. From here, we have time to continue work on the project of translating our English into morse code. We debated between using one light based on time or two lights to communicate morse. We ended up making a pro and con table to detail this. After that, we, the Earth team, started coded the program. We used a for loop to cycle through each letter in the "text" string and then used a "switch" to create the code for each letter. We also called separate functions of "dot" and "dash" so that our code would be as minimal as possible. Next time, we need to test our code to see how it actually works.
 
 Journal from Friday, December 13th, 2019:
-Today was the last day before winter break. We 
+Today was the last day before winter break. Our class was cancelled!
