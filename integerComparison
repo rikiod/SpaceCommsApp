@@ -1,0 +1,24 @@
+// This program, the SL homework from January 6th, checks if two integers entered by the user are equal.
+
+#include <stdio.h>
+
+int integerComparison(void) {
+int firstInteger=0;
+int secondInteger=0;
+
+printf("Please enter the first integer.\n");
+scanf("%d", &firstInteger);
+printf("Please enter the second integer.\n");
+scanf("%d", &secondInteger);
+if (firstInteger==secondInteger) {
+  printf("The numbers you entered are equal.\n");
+}
+else {
+  printf("The numbers you entered are not equal.\n");
+}
+return 0;
+}
+
+
+
+
