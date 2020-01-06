@@ -348,7 +348,7 @@ After developing this common standard, code needs to be developed. There are six
 
 We began by learning about protocols used in technology today, furthering our background information so we can create our own protocol to communicate effectively.
 
-**Table 5:**  Some highly prominent protocols used in many of today's technology, their creator(s), and their function. 
+**Table 5:**  Some highly prominent protocols used in many of today's technologies, their creator(s), and their function. 
 
 | Name  | Creator | Summary |
 | :----: |:----:| :----:|
