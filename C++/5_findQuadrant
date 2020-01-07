@@ -1,0 +1,27 @@
+// This program aims to take a coordinate point in an XY system inputted by the user and then determine the quadrant in which the point lies.
+
+#include <stdio.h>
+
+int main(void) {
+  int x=0;
+  int y=0;
+
+  printf("Please enter the coordinates of your point.\n");
+  scanf("%d %d", &x, &y);
+  if (x==0 || y==0) {
+    printf("The point is an intercept, meaning it isn't in a quadrant.\n");
+  }
+  else if (x>0 && y>0) {
+    printf("The point is in the first quadrant.\n");
+  }
+  else if (x>0 && y<0) {
+    printf("The point is in the fourth quadrant.\n");
+  }
+  else if (x<0 && y>0) {
+    printf("The point is in the second quadrant.\n");
+  }
+  else if (x<0 && y<0) {
+    printf("The point is in the third quadrant.\n");
+  }
+  return 0;
+}
