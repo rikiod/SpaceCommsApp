@@ -1,0 +1,24 @@
+// This program determines the eligibility of a student to enroll in a professional course based on their math, physics, and chemistry grade.
+
+#include <stdio.h>
+
+int main(void) {
+  int math=0, physics=0, chem=0, all=0, mp=0;
+
+  printf("Please input your grades in the following order: math, physics, chemistry.\n");
+  scanf("%d %d %d", &math, &physics, &chem);
+  all=math+physics+chem;
+  mp=math+physics;
+  if (math>=65 && physics>=55 && chem>=50 && all>=180) {
+    printf("Congratulations, you are eligible for our program!\n");
+  }
+  else {
+    if (mp>=140) {
+      printf("Congratulations, you are eligible for our program!\n");
+    }
+    else {
+      printf("I regret to inform you that you are uneligible for our program.");
+    }
+  }
+  return 0;
+}
