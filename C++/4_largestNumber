@@ -1,0 +1,22 @@
+// This program aims to have the user enter three numbers and then finds the largest of the three inputted numbers.
+
+#include <stdio.h>
+
+int main() {
+  int firstNumber=0;
+  int secondNumber=0;
+  int thirdNumber=0;
+
+  printf("Please enter your three numbers.\n");
+  scanf("%d %d %d", &firstNumber, &secondNumber, &thirdNumber);
+
+   if ( firstNumber > secondNumber && firstNumber > thirdNumber )
+      printf("The first number is the largest.\n");
+   else if ( secondNumber > firstNumber && secondNumber > thirdNumber )
+      printf("The second number is the largest.\n");
+   else if ( thirdNumber > firstNumber && thirdNumber > secondNumber )
+      printf("The third number is the largest.\n");
+   else   
+      printf("The given values must be unique. PLease try again.\n");
+   return 0;
+}
