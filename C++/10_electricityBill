@@ -1,0 +1,47 @@
+// This program calculates and prints the electricity bill of a customer.
+
+#include <stdio.h>
+
+int main(void) {
+  int id=0, consumption=0, initialCost=0, cost=0,surcharge=0, unitCost=0;
+  char name[100];
+  
+
+  printf("Hello. Please enter your information in the follow format: Customer ID, Name, Consumption.\n");
+  scanf("%d %s %d", &id, name, &consumption);
+  if (consumption < 0) {
+    printf("You entered an invalid value for your energy consumption. Please restart the program.\n");
+  }
+  else if (consumption > 0 && consumption < 200) {
+    cost=consumption*12/10;
+    unitCost=12/10;
+  }
+  else if (consumption >= 200 && consumption < 400) {
+    cost=consumption*15/10;
+    unitCost=15/10;
+  }
+  else if (consumption >= 400 && consumption < 600) {
+    cost=consumption*18/10;
+    unitCost=18/10;
+   }
+   else if (consumption >= 600) {
+     cost=consumption*2;
+     unitCost=2.00;
+   }
+  if (cost > 400) {
+    surcharge=cost*15/100;
+    cost=cost*115/100;
+  }
+  if (cost < 100) { 
+    cost=100;
+  }
+  initialCost=cost-surcharge;
+
+  printf("Customer ID: %d\n", id);
+  printf("Customer Name: %s\n", name);
+  printf("Energy Consumed: %d units\n", consumption);
+  printf("Rate Charged: %d yen per unit, total of %d yen\n", unitCost, initialCost);
+  printf("Surcharge: %d yen\n", surcharge);
+  printf("Total Amount Due: %d yen\n", cost);
+  return 0;
+}
