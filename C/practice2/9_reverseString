@@ -1,0 +1,24 @@
+// This program reverses a string. 
+
+#include <stdio.h>
+#include <string.h>
+ 
+int main(void) {
+   char string[100], temp;
+   int length, x, y, i;
+
+   printf("Please input a string.\n");
+   scanf("%s", string);
+   length=strlen(string);
+
+   x=0;
+   y=length-1;
+    
+for (i=x; i<y; i++) {
+       temp = string[i];
+       string[i] = string[y];
+       string[y] = temp;
+       y--;
+   }
+   printf("The string reversed is %s.\n", string);
+}
