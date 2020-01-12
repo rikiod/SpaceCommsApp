@@ -1,0 +1,26 @@
+// This program finds all of the perfect numbers within a given range. 
+
+#include <stdio.h>
+
+int main(void){
+  int n, i, sum, begin, end;
+  
+  printf("Please enter the starting number for the range.\n");
+  scanf("%d", &begin);
+  printf("Please enter the ending number for the range.\n");
+  scanf("%d", &end);
+ 
+  for (n=begin; n<=end; n++) {
+    i=1;
+    sum = 0;
+    while(i<n){
+      if(n%i==0)
+           sum=sum+i;
+          i++;
+    }
+    if (sum == n) {
+      printf("%d is a perfect number within the given range.\n", n);
+    }
+  }
+      return 0;
+}
