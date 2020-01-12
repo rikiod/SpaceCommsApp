@@ -1,0 +1,17 @@
+// This programs displays the sum of n terms of a harmonic sequence. 
+
+#include <stdio.h>
+
+int main(void) {
+  float num=0, sum=0, i=0;
+
+  printf("Please enter an integer.\n");
+  scanf("%f", &num);
+
+  for (i=1; i<num+1; i++) {
+    sum=sum+1/i;
+  }
+  printf("The sum of the harmonic terms up %f is %f.\n", num, sum);
+
+  return 0;
+}
