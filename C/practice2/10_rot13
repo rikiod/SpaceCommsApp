@@ -1,0 +1,35 @@
+// This program converts a string to ROT13. It is incomplete -- comments need to be added.
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    int x=0, i=0, y=0;
+    char rot[10000]="";
+    char string[10000]="";
+    scanf("%c", &string);
+    char alphabet[26]={'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    int length=strlen(string);
+
+    for (i=0; i<25; i++) {
+     if (string[x]==alphabet[i]) {
+        if(i<13){
+        i+=13;
+        rot[y]=alphabet[i];
+        x++;
+        y++;
+        i-=13;
+     } else if(i>=13){
+        i=i-13;
+        rot[y]=alphabet[i];
+        x++;
+        y++;
+        i+=13;
+     }
+     if (x==(length-1)) {
+        break;
+     }
+     }
+     
+      printf("%s", rot);
+    }
+}
