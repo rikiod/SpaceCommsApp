@@ -1,0 +1,16 @@
+// This program finds the cubes of numbers up to a number provided by a user. 
+
+#include <stdio.h>
+
+int main(void) {
+  int i=0, num=0, cube=0, counter=0;
+
+  printf("Please enter a number.\n");
+  scanf("%d", &num);
+  for (i = 0; i < num; i++) {
+    counter++;
+    cube=counter*counter*counter;
+    printf("The cube is %d\n", cube);
+  }
+  return 0;
+}
