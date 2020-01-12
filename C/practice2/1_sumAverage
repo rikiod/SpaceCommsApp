@@ -1,3 +1,5 @@
+// This program finds the sum and average of ten numbers supplied by the user.
+
 #include <stdio.h>
 
 int main(void) {
