@@ -39,10 +39,9 @@ The client in this case, NASA, needs to be able to translate binary, morse code,
 **Success Criteria:**
 
 1. Communication between Earth and Mars uses Morse code.
-2. Communication between Mars and the Moon uses Binary code.
-3. A communication system that allow station workers to communicate seamlessly using English.
-4. Keyboard input on each station is limited to 2 push buttons. 
-5. 100W lights and buzzers are used efficiently.
+2. A communication system that allow station workers to communicate seamlessly using English.
+3. Keyboard input on each station is limited to 2 push buttons. 
+4. 100W lights and buzzers are used efficiently.
 
 Design
 ------
