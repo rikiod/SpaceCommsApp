@@ -55,7 +55,13 @@ Journal from Friday, December 13th, 2019:
 Today was the last day before winter break. Our class was cancelled!
 
 Journal from Monday, January 6th, 2020:
-This was the first day back from break. We learned about C++ and how it has many similarities to Arduino but is slightly different. We created a numerical triangle pyramid and played away with the new language. We also learned about creating a protocol (ex. IP, VPN, etc) which will be useful for our morse/binary interplanetary communication system as detailed in the README of this repository.
+This was the first day back from break. We learned about C and how it has many similarities to Arduino but is slightly different. We created a numerical triangle pyramid and played away with the new language. We also learned about creating a protocol (ex. IP, VPN, etc) which will be useful for our morse/binary interplanetary communication system as detailed in the README of this repository.
 
 Journal from Wednesday, January 8th, 2020:
-Today we were assigned exercises to practice C++ and get better at using the language. All of these programs are housed within the C++ folder of this repository. This was good practice to hone our coding skills. I got stuck on the last question, number 10, because it was the only question to use strings; however, I ended up figuring it out in the end. 
+Today we were assigned exercises to practice C and get better at using the language. All of these programs are housed within the C folder of this repository. This was good practice to hone our coding skills. I got stuck on the last question, number 10, because it was the only question to use strings; however, I ended up figuring it out in the end. 
+
+Journal from Monday, January 13th:
+We learned about the machine cycle and all of the various registers in it. While it was confusing at first, it made sense towards the end. I also realized that I need to work on memorizing the hexadecimal and binary number system. 
+
+Wednesday, January 15th:
+We had free time today to work on our Unit 2 project, including the code and repository. 
