@@ -1,23 +1,24 @@
+
 // include the library code:
 #include <LiquidCrystal.h>
 int index = 0; 
 // add all the letters and digits to the keyboard
-String keyboard[]={"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "SENT", "DEL"};
+String keyboard[]={"A", "B","SENT", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "DEL"};
 String text = "";
 int numOptions = 28;
-int length = text.length();  // defining length variable as number of elements in text string 
-
+int i = 0;
 
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 9, 8);
 
 void setup() {
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   // Print a message to the LCD.
   attachInterrupt(0, changeLetter, RISING);//button A in port 2
   attachInterrupt(1, selected, RISING);//button B in port 3
-  pinMode(13, OUTPUT); //light in port 13 
 }
 
 void loop() {
@@ -29,7 +30,6 @@ void loop() {
   lcd.setCursor(0, 1);
   lcd.print(text);
   delay(100);
-  
 }
 
 //This function changes the letter in the keyboard
@@ -65,16 +65,27 @@ void selected(){
     }
     else if(key == "SENT")
     {
-      for (int i = 0; i  < 5; i++) { // blink light five times to indicate beginning of message
-  digitalWrite(13, HIGH);
-  delay(500);
-  digitalWrite(13, LOW);
-  delay(500);
-
+      sent();
+      text="";
+    }else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
 }
-
-for (int i = 0; i < length; i++) {  // cycling through each letter of text 
-switch (text.charAt(i)) { // translating for i’th letter
+ 
+void sent() {
+  Serial.print("begin ");
+  // for (int i = 0; i  < 7; i++) { // blink light seven times to indicate beginning of message
+ // digitalWrite(13, HIGH);
+ // delay(300);
+ // digitalWrite(13, LOW);
+ // delay(300);
+//}
+      
+int strLen = text.length(); // setting len to length to text
+for (int i = 0; i < strLen; i++) {  // cycling through each letter of text 
+  switch (text.charAt(i)) { // translating for i’th letter
  
 case 'A':
   dot();
@@ -239,41 +250,32 @@ case 'Z':
 case ' ':
   digitalWrite(13, LOW);
   delay(4000);
-if (i < length - 1) { 
-  for (int i = 0; i < 5; i++) { // blink light five times to indicate beginning of message
-  digitalWrite(13, HIGH);
-  delay(500);
-  digitalWrite(13, LOW);
-  delay(500); }
-} }
-
-      text="";
-} } else{
-      text += key;
-    }
-    index = 0; //restart the index
-  }
-  
-  
-  //
-}
+if (i < strLen - 1) { 
+ Serial.print("done");
+  // for (int i = 0; i < 7; i++) { // blink light five times to indicate beginning of message
+ // digitalWrite(13, HIGH);
+ // delay(300);
+ // digitalWrite(13, LOW);
+ // delay(300); }
+} 
+  }}}
 
 void dot() {  // defining the dot function as one light being ON for one second 
-Serial.print(".");
+Serial.print("dot ");
 digitalWrite(13, HIGH);
 delay(1000);
 digitalWrite(13, LOW);
+delay(1000);
 }
 
 void dash() { // defining the dash function as the light being on for three seconds
-Serial.print("-");
+Serial.print("dash ");
 digitalWrite(13, HIGH);
 delay(3000);
 digitalWrite(13, LOW);
+delay(1000);
 }
 
 void wait() { // defining the wait function 
   delay(2000); // between letters is two second delay
 } 
-
- 
