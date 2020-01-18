@@ -14,6 +14,7 @@ LiquidCrystal lcd(12, 11, 5, 4, 9, 8);
 void setup() {
   Serial.begin(9600);
   pinMode(13, OUTPUT);
+  pinMode(10, OUTPUT);
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   // Print a message to the LCD.
@@ -271,11 +272,14 @@ delay(1000);
 void dash() { // defining the dash function as the light being on for three seconds
 Serial.print("dash ");
 digitalWrite(13, HIGH);
+digitalWrite(10, HIGH);
 delay(3000);
 digitalWrite(13, LOW);
+digitalWrite(10, LOW);
 delay(1000);
 }
 
 void wait() { // defining the wait function 
   delay(2000); // between letters is two second delay
 } 
+
