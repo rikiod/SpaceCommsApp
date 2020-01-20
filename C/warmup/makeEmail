@@ -1,0 +1,14 @@
+// This program will take the year, your first name, and your last name as an input and output it in the following format: 2021.first_name.last_name@uwcisak.jp
+
+#include <stdio.h>
+
+int main(void) {
+  int grad=0;
+  char first[50];
+  char last[50];
+
+  printf("Please enter your graduation year, first name, and last name, separated by spaces.\n");
+  scanf("%d %s %s", &grad, &first, &last);
+  printf("Here is your email: %d.%s.%s@uwcisak.jp\n", grad, first, last);
+  return 0;
+}
