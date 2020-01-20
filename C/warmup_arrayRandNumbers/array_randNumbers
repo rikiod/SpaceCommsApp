@@ -1,0 +1,19 @@
+// This program will generate an array with ten random numbers.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  int i=0;
+  printf("Please enter an array of ten integers.\n");
+   int mark[10];
+   for (i=0; i<10; i++) {
+     mark[i]=rand();
+   }
+ 
+ for (i=0; i<10; i++) {
+  printf("Element %d: %d\n", i, mark[i]);
+ }
+
+  return 0;
+}
