@@ -24,7 +24,7 @@ I propose a new Arduino based system which would have a variety of functions as 
 
 **Proposed Solution:**
 
-I will create a Modern C program to address these issues. Modern C is being used because NASA needs to further develop a communication system which makes efficient use of the limited supplies on the Moon and Mars and Modern C doesn't require very rugged hardware to be run. Compared to my previous Project 1 repository, there are a few main resources in whhich Modern C is being used in addition to the fact that it is what we are learning in class currently: 
+I will create a Modern C program to address these issues. Modern C is being used because NASA needs to further develop a communication system which makes efficient use of the limited supplies on the Moon and Mars and Modern C doesn't require very rugged hardware to be run. Modern C is also being used because of it's additionally capacities compared to Bash. As more of a modern language, it has many more capabilities and is able to run easily. Despite that it is slightly more complex than Bash, it will be used by primarily engineers and/or astronauts so this should not pose an issue. Compared to my previous Project 1 repository, there are a few main resources in which Modern C is being used in addition to the fact that it is what we are learning in class currently: 
 
 **Table 1:** Shows the differences between Modern C and Bash so that the two lanauges can be evaluated against each other.
 
@@ -310,44 +310,11 @@ void selected(){
  
  **6. English to Morse Translation System:**
  
- Despite the fact that we gathered the message that the user wanted to communicate in English, we still need to translate it to morse code in order to transmit it to the Moon. From here, we conducted a feasibility study to see what the best method would be to communicate. Since morse code is traditionally automatically recorded, the fact that we are using manual and visual lights means we need to adapt our system.
- 
-**Table 3:** The pros and cons of using a time-based Morse system in which a dot would be represented by the light being on for one second. If the light were on for three seconds, that would be a dash. Meanwhile, spaces between letters and words would be represented by different lengths of the light being off. 
-
-| Pros  | Cons    |
-| :----: |:----:| 
-| Appears to be easier to code | May be difficult to differentiate flashes of light | 
-| Only uses one light | Slow to send messages | 
-| More energy efficient | Need to wait to understand what's being sent |
-
-**Table 4:** The advantages and disadvantages of using a two light Morse system. This system would use two lights in which if both were on, a dash is communicated. If one is on and the other is off, a dot would be sent. If both were off, nothing would be sent. 
-
-| Pros  | Cons  |
-| :----: |:----:|
-| Easier to read than time-based | May be more complicated | 
-| Need to watch instead of wait | Hard to differentiate between spaces | 
-| Immediately know what's happening | Hard to differentiate between messages |
-
-Comparing these two tables, we came to the conclusion that having a two light system would better suit our needs. Now, knowing that, communicating with those who were developing the code for the Moon (recieving our message) was crucial. We established a standard for inter-planetary morse code communication so that we would know exactly what was being transmitted.
-1. The default time for a light to be turned on is one second. 
-2. If light A is off and light B is on, a dot is being transmitted. 
-3. If both light A and light B is on, a dash is being transmitted.
-4. If both Light A and B is off, the system is off and not transmitting. 
-5. If both light A and B flash five times for 0.5 seconds each, the transmission is beginning or ending. 
-
-After developing this common standard, code needs to be developed. There are six main steps to create a functioning morse translation program:
-1. Define "dot" and "dash" as separate functions so they don't need to be restated for each letter.
-2. Blink light rapidly to signify that transmission is beginning.
-3. Use a for loop to cycle through each letter within the user inputted "text" string.
-4. Use a switch case to see which letter to translate, then transmit it simultaneously using the light.
-5. Repeat until all of the letters within the string are sent. 
-6. Blink light rapidly to signify that the message has been sent and the transmission is complete. 
-
-**Protocol:**
+ **Protocol:**
 
 We began by learning about protocols used in technology today, furthering our background information so we can create our own protocol to communicate effectively.
 
-**Table 5:**  Some highly prominent protocols used in many of today's technologies, their creator(s), and their function. 
+**Table 3:**  Some highly prominent protocols used in many of today's technologies, their creator(s), and their function. 
 
 | Name  | Creator | Summary |
 | :----: |:----:| :----:|
@@ -360,7 +327,44 @@ We began by learning about protocols used in technology today, furthering our ba
 | HTTP | Tim Berners-Lee | Used on worldwide web for anything clickable (hyperlinks, etc) | 
 | VPN | Gurdeep Singh-Pall  | Provides encrypted internet connections | 
 
-Based off this information and knowledge about protocols, we now worked together to find a common protocol for our communication between Earth, the Moon, and Mars. 
+Based off this information and knowledge about protocols, we now worked together to find a common protocol for our communication between Earth and the Moon. From here, we conducted a feasibility study to see what the best method would be to communicate. Since morse code is traditionally automatically recorded, the fact that we are using manual and visual lights means we need to adapt our system.
+ 
+**Table 4:** The pros and cons of using a time-based Morse system in which a dot would be represented by the light being on for one second. If the light were on for three seconds, that would be a dash. Meanwhile, spaces between letters and words would be represented by different lengths of the light being off. 
+
+| Pros  | Cons    |
+| :----: |:----:| 
+| Appears to be easier to code | May be difficult to differentiate flashes of light | 
+| Only uses one light | Slow to send messages | 
+| More energy efficient | Need to wait to understand what's being sent |
+
+**Table 5:** The advantages and disadvantages of using a two light Morse system. This system would use two lights in which if both were on, a dash is communicated. If one is on and the other is off, a dot would be sent. If both were off, nothing would be sent. 
+
+| Pros  | Cons  |
+| :----: |:----:|
+| Easier to read than time-based | May be more complicated | 
+| Need to watch instead of wait | Hard to differentiate between spaces | 
+| Immediately know what's happening | Hard to differentiate between messages |
+
+Comparing these two tables, we came to the conclusion that having a two light system would better suit our needs. Now, knowing that, communicating with those who were developing the code for the Moon (recieving our message) was crucial. We established a standard for inter-planetary morse code communication so that we would know exactly what was being transmitted.
+1. The default time for a light to be turned on is two seconds. 
+2. If light A is off and light B is on, a dot is being transmitted. 
+3. If both light A and light B is on, a dash is being transmitted.
+4. If both Light A and B is off, the system is off and not transmitting. 
+
+After developing this common standard, code needs to be developed. There are six main steps to create a functioning morse translation program:
+1. Define "dot" and "dash" as separate functions so they don't need to be restated for each letter.
+2. Use a for loop to cycle through each letter within the user inputted "text" string.
+3. Use a switch case to see which letter to translate, then transmit it simultaneously using the light.
+4. Repeat until all of the letters within the string are sent. 
+
+**Developing Code:** 
+
+
+
+
+
+
+
 
 
  
