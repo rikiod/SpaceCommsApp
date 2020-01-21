@@ -51,11 +51,18 @@ Design
 
 **Fig. 1:** Rudimentary system diagram showing inputs and outputs of the proposed system. The Arduino is also shown and it's functions, while elementary, are explained. 
 
-My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. As seen in Figure 1, that would mean 
+My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. That would mean that my team is responsible solely for utilizing two buttons to input as English and transmit and translate into morse code. I would also need to be able to receive and translate and morse code. Then, this would be displayed through the two LED outputs. I would not, however, be responsible for any of the components related to the "binary" rectangle on the left side of the Arduino as pictured in Figure 1.  
 
 **Testing Plan:** 
 
-After 
+![Morse to English Translation Test](MorseToEnglishTEST.png)
+
+**Fig. 2:** The testing protoccol for ensuring that the Morse to English translation system functions properly. This test would make sure that the letters are able to come up on the screen and that both the delete and reset function works correctly. This protoccol will be used in the evaluation section. 
+
+![English to Morse Translation Test](EnglishToMorseTEST.png)
+
+**Fig. 3:** The testing protoccol for ensuring that the English to Morse translation system functions properly. This test would make sure that the letters are able to be communicated through the two LEDs and that the delete function works corrrectly. This protoccol will be used in the evaluation section. 
+
 
 **Modern C:**
 
