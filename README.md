@@ -55,11 +55,11 @@ My task specifically here is to ask as the translator on planet Earth, meaing th
 
 **Testing Plan:** 
 
-![Morse to English Translation Test](MorseToEnglishTEST.png)
+![Morse to English Translation Test](MTE.png)
 
 **Fig. 2:** The testing protoccol for ensuring that the Morse to English translation system functions properly. This test would make sure that the letters are able to come up on the screen and that both the delete and reset function works correctly. This protoccol will be used in the evaluation section. 
 
-![English to Morse Translation Test](EnglishToMorseTEST.png)
+![English to Morse Translation Test](ETM.png)
 
 **Fig. 3:** The testing protoccol for ensuring that the English to Morse translation system functions properly. This test would make sure that the letters are able to be communicated through the two LEDs and that the delete function works corrrectly. This protoccol will be used in the evaluation section. 
 
