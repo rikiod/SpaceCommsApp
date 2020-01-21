@@ -51,7 +51,7 @@ Design
 
 **Fig. 1:** Rudimentary system diagram showing inputs and outputs of the proposed system. The Arduino is also shown and it's functions, while elementary, are explained. 
 
-My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
+My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. As seen in Figure 1, that would mean 
 
 **Testing Plan:** 
 
