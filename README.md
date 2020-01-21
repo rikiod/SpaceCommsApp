@@ -24,7 +24,7 @@ I propose a new Arduino based system which would have a variety of functions as 
 
 **Proposed Solution:**
 
-I will create a Modern C program to address these issues. Modern C is being used because NASA needs to further develop a communication system which makes efficient use of the limited supplies on the Moon and Mars and Modern C doesn't require very rugged hardware to be run. Modern C is also being used because of it's additionally capacities compared to Bash. As more of a modern language, it has many more capabilities and is able to run easily. Despite that it is slightly more complex than Bash, it will be used by primarily engineers and/or astronauts so this should not pose an issue. Compared to my previous Project 1 repository, there are a few main resources in which Modern C is being used in addition to the fact that it is what we are learning in class currently: 
+I will create a Modern C program to address these issues. Modern C is being used because NASA needs to further develop a communication system which makes efficient use of the limited supplies on the Moon and Mars and Modern C doesn't require very rugged hardware to be run. Modern C is also being used because of it's additionally capacities compared to Bash. As more of a modern language, it has many more capabilities and is able to run easily. Despite that it is slightly more complex than Bash, it will be used by primarily engineers and/or astronauts so this should not pose an issue. Lastly, using Modern C is more advantageous because of the resources available online and the fact that the language is what we are currently learning in class.  
 
 **Table 1:** Shows the differences between Modern C and Bash so that the two lanauges can be evaluated against each other.
 
@@ -49,9 +49,13 @@ Design
 **System Diagram:**
 ![System Diagram](systemDiagram.png)
 
-**Fig. 1:** System diagram showing inputs and outputs of the proposed system. The Arduino is also shown and it's functions, while elementary, are explained. 
+**Fig. 1:** Rudimentary system diagram showing inputs and outputs of the proposed system. The Arduino is also shown and it's functions, while elementary, are explained. 
 
 My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. 
+
+**Testing Plan:** 
+
+After 
 
 **Modern C:**
 
