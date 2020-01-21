@@ -1,5 +1,5 @@
 
-Unit 2
+Unit 2: Interplanetary Communication System 
 ======
 
 An English, morse, and binary translation program to theoretically enable communication between Earth, the Moon, and Mars, coded in Modern C and run on an Arduino UNO. 
