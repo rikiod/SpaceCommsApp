@@ -370,6 +370,8 @@ After developing this common standard, code needs to be developed. There are six
 
 **Developing Code:** 
 
+Using the English input system, there were just a few edits which needed to be made in order to add the capability to translate the English letters into morse code, then translated through our two lights. To do so, we first realized that we needed to add a section that said `else if (key == "SENT")`, then a function called "sent" would be triggered.
+
 
 
 
