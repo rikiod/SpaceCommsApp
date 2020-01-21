@@ -1,4 +1,4 @@
-// This program converts English into morse code, communicate through two LEDs. 
+// This program converts English into morse code, communicated through two LEDs. 
 
 #include <LiquidCrystal.h>
 int index = 0; 
