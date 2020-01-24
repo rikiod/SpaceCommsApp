@@ -90,12 +90,18 @@ For such a endeavor such as initiating communication between Earth, the Moon, an
 
 Development
 -----------
-**1. Counting with binary:**
+**1. Inputs for those with Physical Challenges:**
+
+Consider the case of somebody who may not be able to use a keyboard or mouse. What options could be provided to enable this person to use a computer? We came up with the two following ideas:
+1. A system in which there is a static alphabet. One button is used for the next letter while the other is "ok."
+2. An automatically looking alphabet where there is a single button used to select a letter.
+
+**2. Counting with binary:**
 
 We first learned to count with binary [4](#Citations), a necessary step for converting data from English to binary and vice versa. Essentially, in binary, you start off by representing zero as one. Then, whenever the last digit is zero, you change the number to one. For other numerical systems such as base four, the base is four rather than two as it is with binary. Thus, you would replace the last digit, three, with zero. This pattern applies similarly to any other base numerical counting systems.
 
 
-**2. Representing numbers in binary through LED lights:**
+**3. Representing numbers in binary through LED lights:**
 
 How many led lights do you need to show the numbers from 1 to 15? Have two led lights. Flash red for one, flash white for zero.
 
@@ -126,14 +132,14 @@ void blinkRed(int t){
 }
 ```
 
-**3. Using buttons to trigger lights:**
+**4. Using buttons to trigger lights:**
 
 Using an Arduino, we can use buttons to trigger lights. While this can simply be done by using a large amount of "if else" statements, this problem can also be solved quite easily with logic gates. By noticing patterns in between inputs and outputs, the logic gates of "or," "and," "not," and "xor" can be used to simplify an equation for the output. 
 
 For example, in a scenario in which Button A and Button B not being pressed or just Button A being pressed results in a light being pressed, the following code could be created: ` if(digitalRead(!butB)==HIGH); digitalWrite(out1, HIGH);}`.
 These logical gates can be used for a variety of other outputs as well as detailed further in this document. 
 
-**4. Converting from decimal to a seven segment number:**
+**5. Converting from decimal to a seven segment number:**
 
 Since this project is based around converting numbers from decimal to binary and morse code, and vice versa, it is useful to practice the use of logic gates by creating a system in which decimal numbers are converted to a seven segment number. To do this, we essentially made a table in which 
 
@@ -231,7 +237,7 @@ Here is the circuit for the code above:
 
 **Fig. 5:** The circuit used to run a seven segment display on, compatible with the code as seen above. 
 
-**5. The Machine Cycle:**
+**6. The Machine Cycle:**
 
 The machine cycle is the cycle that a processor runs whenever an instruction is given. It is the most basic foundation for the central processing unit (CPU). Modern CPUs run millions of these cycles per second. The cycle consists of three functions:
 1. Fetch
@@ -245,7 +251,7 @@ From here, the actual action can be performed.
 
 Within the CPU, registers (very small memory storage containers) are used in order to house the different instructions and data.
 
-**6. English Input System:**
+**7. English Input System:**
 
 In our program, it is important for the operators to be able to input and receive in English. However, since we only have two buttons as an input, we have to develop an English input system which is different from a traditional keyboard, instead using two buttons. 
 
@@ -335,7 +341,7 @@ void selected(){
 }
  ```
  
- **7. English to Morse Translation System:**
+ **8. English to Morse Translation System:**
  
  **Protocol:**
 
@@ -463,7 +469,7 @@ Other than that, coding this translation program was fairly simple because the E
 
 **Fig #:** This GIF shows the English to Morse translation system translating the word "TEST." It can be slightly difficult to see the first "T" communicated through the lights. 
 
-**8. Morse to English Translation System:**
+**9. Morse to English Translation System:**
 
 Having already finished the English to morse translation system, the morse to English translation system was easier because we could use a similar organization and format. Knowing this, we were able to quickly come up with code. Below is some snippets of crucical portions of our code. The entirity of the program can be found inside of the "finalScripts" folder, located iwthin this Unit 2 Repository.
 
@@ -497,11 +503,20 @@ When coding the morse to English translation system, we had no major challenges 
 
 **Fig #:** This GIF shows the English to Morse translation system translating the word "TEST." It can be slightly difficult to see the first "T" communicated through the lights. 
 
-**8. Manual**
+**10. Manual**
 
 This system, despite being quite simplistic, has a manual on proper usage. This can be found in the "information" folder of this repository.
 
- 
+**11. Testing**
+
+Using the testing protoccols outlined in the planning section of this README, we performed tests.
+
+**Test 1: English to Morse** 
+We inputted the word "TEST" and saw that this word was on the second row of the LCD display. Then, we used the "SENT" button and observed the lights to make sure that the proper flashes were being conveyed. Lastly, we tested if the delete key worded by inputting the letter "A," pressing the "DEL," key, and ensuring that nothing was on the second row of the LCD. Video evidence of these tests can be seen at the following link: [English to Morse Test.](https://www.youtube.com/playlist?list=PLS6syomu_xC6TR8MhTaBuTHIIJVKAyJ-w).
+
+**Test 2: Morse to English**
+We input the Morse code, "-.-. .- -..." into the program and saw the word "CAB" on the second row of the LCD display. Then, we pressed delete and saw the word "CA." Later, when "RESET" was pressed, the second row of the LCD was displayed. Again, video evidence of these tests can be found at the following link: [Morse to English Test.](https://www.youtube.com/playlist?list=PLS6syomu_xC6TR8MhTaBuTHIIJVKAyJ-w).
+
 Evaluation
 ----------
 
