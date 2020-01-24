@@ -370,14 +370,302 @@ After developing this common standard, code needs to be developed. There are six
 
 **Developing Code:** 
 
-Using the English input system, there were just a few edits which needed to be made in order to add the capability to translate the English letters into morse code, then translated through our two lights. To do so, we first realized that we needed to add a section that said `else if (key == "SENT")`, then a function called "sent" would be triggered.
+Using the English input system, there were just a few edits which needed to be made in order to add the capability to translate the English letters into morse code, then translated through our two lights. To do so, we first realized that we needed to add a section that said `else if (key == "SENT")`, then a function called "sent" would be triggered. After that, we defined our "SENT" function to perform the following actions.
+1. Translate the text into letters
+2. Flash the lights according to the morse code (dash = both lights on; dot = one light on)
+3. When finished, reset text, thus allowing the user to continue entering more. 
 
+The code for this can be pictured below.
 
+```.ino
+// This program converts English into morse code, communicated through two LEDs. Both LEDs being on represents a dash while one LED represents a dot. 
 
+#include <LiquidCrystal.h>
+int index = 0; 
+// add all the letters and digits to the keyboard
+String keyboard[]={"A", "B", "SENT", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "DEL"};
+String text = "";
+int numOptions = 28;
+int i = 0;
 
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 9, 8);
 
+void setup() {
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+  pinMode(10, OUTPUT);
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  attachInterrupt(0, changeLetter, RISING); //button A in port 2
+  attachInterrupt(1, selected, RISING); //button B in port 3
+}
 
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(keyboard[index]);
+  lcd.setCursor(0, 1);
+  lcd.print(text);
+  delay(100);
+}
 
+//This function changes the letter in the keyboard
+void changeLetter(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    index++;
+      //check for the max row number
+    if(index==numOptions){
+      index=0; //loop back to first row
+    } 
+ }
+}
+
+//this function adds the letter to the text or send the msg
+void selected(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    
+    String key = keyboard[index];
+    if (key == "DEL")
+    {
+      int len = text.length();
+      text.remove(len-1);
+    }
+    else if(key == "SENT")
+    {
+      sent(); // addition of sent(); redirects program to separate function, causing translation to initiate
+      text=""; // all of the code up until this section is the exact same as from the English input system detailed above
+    }
+    else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+ 
+void sent() { // defining sent function
+      
+int strLen = text.length(); // setting len to length to text
+for (int i = 0; i < strLen; i++) {  // cycling through each letter of text 
+  switch (text.charAt(i)) { // translating for i’th letter
+ 
+case 'A': // each case is checking if the letter of the "text" string is equal to itself. if it is, it will perform the actions. for example, if the letter were equal to A, it would perform the functions dot, dash, and wait.
+  dot();
+  dash();
+  wait();
+  break;
+case 'B':
+  dash();
+  dot();
+  dot();
+  dot();
+  wait();
+  break;
+case 'C': 
+  dash();
+  dot();
+  dash();
+  dot();
+  wait();
+  break;
+case 'D':
+  dash();
+  dot();
+  dot();
+  wait();
+  break;
+case 'E':
+  dot();
+  wait();
+  break;
+case 'F': 
+  dot();
+  dot();
+  dash();
+  dot();
+  wait();
+  break;
+case 'G':
+  dash();
+  dash();
+  dot();
+  wait();
+  break;
+case 'H':
+  dot();
+  dot();
+  dot();
+  dot();
+  wait();
+  break;
+case 'I':
+  dot();
+  dot();
+  wait();
+  break;
+case 'J':
+  dot();
+  dash();
+  dash();
+  dash();
+  wait();
+  break;
+case 'K':
+  dash();
+  dot();
+  dash();
+  wait();
+  break;
+case 'L':
+  dot();
+  dash();
+  dot();
+  dot();
+  wait();
+  break;
+case 'M':
+  dash();
+  dash();
+  wait();
+  break;
+case 'N':
+  dash();
+  dot();
+  wait();
+  break;
+case 'O':
+  dash();
+  dash();
+  dash();
+  wait();
+  break;
+case 'P':
+  dot();
+  dash();
+  dash();
+  dot();
+  wait();
+  break;
+case 'Q':
+  dash();
+  dash();
+  dot();
+  dash();
+  wait();
+  break;
+case 'R':
+  dot();
+  dash();
+  dot();
+  wait();
+  break;
+case 'S':
+  dot();
+  dot();
+  dot();
+  wait();
+  break;
+case 'T':
+  dash();
+  wait();
+  break;
+case 'U':
+  dot();
+  dot();
+  dash();
+  wait();
+  break;
+case 'V':
+  dot();
+  dot();
+  dot();
+  dash();
+  wait();
+  break;
+case 'W':
+  dot();
+  dash();
+  dash();
+  wait();
+  break;
+case 'X':
+  dash();
+  dot();
+  dot();
+  dash();
+  wait();
+  break;
+case 'Y':
+  dash();
+  dot();
+  dash();
+  dash();
+  wait();
+  break;
+case 'Z': 
+  dash();
+  dash();
+  dot();
+  dot();
+  wait();
+  break; 
+case ' ':
+  digitalWrite(13, LOW);
+  delay(4000);
+if (i < strLen - 1) {  // when all letters have been translated, the sent function is complete
+ Serial.print("done");
+} 
+  }}}
+
+void dot() {  // defining the dot function as one light being on
+Serial.print("dot ");
+digitalWrite(13, HIGH);
+delay(1000);
+digitalWrite(13, LOW);
+delay(1000);
+}
+
+void dash() { // defining the dash function as both lights being on
+Serial.print("dash ");
+digitalWrite(13, HIGH);
+digitalWrite(10, HIGH);
+delay(3000);
+digitalWrite(13, LOW);
+digitalWrite(10, LOW);
+delay(1000);
+}
+
+void wait() { // defining the wait function 
+  delay(3000); // between letters is three second delay
+} 
+```
+
+When testing this code, it proved very useful to have a circuit already complete on Tinkercad. This way, we could perform testing outside of the classroom when we did not have access to an Arduino.
+
+![English to Morse Circuit](ETMCircuitry.png)
+
+**Fig #:** The Tinkercad simulation circuit used to perform testing throughout the development process.
+
+The code above successfully is able to communicate messages through morse code. There were certainly some difficulties when coding it, however. Firstly, finding a way to properly find the length of the string "text" proved difficult. We were using the incorrect function for quite a while until finally discovering that it is text.length. In addition, because some variables were named to be "length," the system got confused and was not able to properly define them. Lastly, we had some problems with brackets when putting all of our code together. Because we had coded the added translation functionality on a shared Google Docs, many of the brackets got jumbled up when pasting in the code. This caused it not to work, helping us to learn the importance of organization.
+
+Other than that, coding this translation program was fairly simple because the English input system was already finished. This process helped us to learn more about switch cases, functions, and strings. In my own personal regard, the logical aspect of this functionality proved to be the hardest -- thinking about how the program would flow through everything was difficult but when we found a successful method, the rest of the process was fairly straight forward. 
+
+**Morse to English Translation System:**
+
+The morse to English translation system wa
 
 
  
