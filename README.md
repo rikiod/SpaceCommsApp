@@ -663,6 +663,10 @@ The code above successfully is able to communicate messages through morse code. 
 
 Other than that, coding this translation program was fairly simple because the English input system was already finished. This process helped us to learn more about switch cases, functions, and strings. In my own personal regard, the logical aspect of this functionality proved to be the hardest -- thinking about how the program would flow through everything was difficult but when we found a successful method, the rest of the process was fairly straight forward. 
 
+![](ETMGIF.GIF)
+
+
+
 **Morse to English Translation System:**
 
 The morse to English translation system wa
