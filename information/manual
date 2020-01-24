@@ -1,0 +1,18 @@
+Inteplanetary Communication Center
+January 23rd, 2020
+v1.0
+
+Welcome to the Interplanetary Communication System! This system utilizes an Arduino UNO in order to translate from English to morse code and from morse code to English. Thus, using a system with two lights, the morse code can be communicated across planets. 
+
+
+1. How to input English
+In order to input English which will thus be translated into morse code, please use the two buttons on the breadboard. Using the button on the left enables you to cycle through all of the letters in the English alphabet. When you reach the letter you would like to select, press the button on the right. This letter will now be added to your list of selected characters on the lower half of the screen. Continue cycling through letters until you have formed the message you would like to be transmitted.
+
+When you have finished your message, use the left button to reach the "SENT" key. Then, press the button on the right to select this. Transmission will promptly begin using the two lights -- when both lights turn off, a dash is being communicated; when one light turns off, a dot is being communicated. The receivers on the other planet will be able to receive your light signals and then convert your message back to English.
+
+2. How to input morse code
+In order to translate a message communicated through morse, you must first have the message. Make notes as you receive the message, keeping track of the various dots and dashes communicated. Then, when complete, use the left button to cycle through the various letters shown in morse. When you reach the correct one, use the right button to select it. The English translation of the letter will immediately show up. Continue doing this with all of the morse letters until your message is complete.
+
+In order to reset the screen and translate a new message, use the left button to cycle to the "RESET" button and then select it with the button on the right. The screen will be cleared. 
+
+Please direct any comments or concerns to 2021.rikio.dahlgren@uwcisak.jp.
