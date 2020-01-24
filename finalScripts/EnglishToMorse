@@ -1,9 +1,9 @@
-// This program converts English into morse code, communicated through two LEDs. 
+// This program converts English into morse code, communicated through two LEDs. Both LEDs being on represents a dash while one LED represents a dot. 
 
 #include <LiquidCrystal.h>
 int index = 0; 
 // add all the letters and digits to the keyboard
-String keyboard[]={"A", "B","SENT", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "DEL"};
+String keyboard[]={"A", "B", "SENT", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "DEL"};
 String text = "";
 int numOptions = 28;
 int i = 0;
@@ -18,8 +18,8 @@ void setup() {
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   // Print a message to the LCD.
-  attachInterrupt(0, changeLetter, RISING);//button A in port 2
-  attachInterrupt(1, selected, RISING);//button B in port 3
+  attachInterrupt(0, changeLetter, RISING); //button A in port 2
+  attachInterrupt(1, selected, RISING); //button B in port 3
 }
 
 void loop() {
@@ -66,8 +66,8 @@ void selected(){
     }
     else if(key == "SENT")
     {
-      sent();
-      text="";
+      sent(); // addition of sent(); redirects program to separate function, causing translation to initiate
+      text=""; // all of the code up until this section is the exact same as from the English input system detailed above
     }
     else{
       text += key;
@@ -76,14 +76,13 @@ void selected(){
   }
 }
  
-void sent() {
-  Serial.print("begin ");
+void sent() { // defining sent function
       
 int strLen = text.length(); // setting len to length to text
 for (int i = 0; i < strLen; i++) {  // cycling through each letter of text 
   switch (text.charAt(i)) { // translating for i’th letter
  
-case 'A':
+case 'A': // each case is checking if the letter of the "text" string is equal to itself. if it is, it will perform the actions. for example, if the letter were equal to A, it would perform the functions dot, dash, and wait.
   dot();
   dash();
   wait();
@@ -246,17 +245,12 @@ case 'Z':
 case ' ':
   digitalWrite(13, LOW);
   delay(4000);
-if (i < strLen - 1) { 
+if (i < strLen - 1) {  // when all letters have been translated, the sent function is complete
  Serial.print("done");
-  // for (int i = 0; i < 7; i++) { // blink light five times to indicate beginning of message
- // digitalWrite(13, HIGH);
- // delay(300);
- // digitalWrite(13, LOW);
- // delay(300); }
 } 
   }}}
 
-void dot() {  // defining the dot function as one light being ON for one second 
+void dot() {  // defining the dot function as one light being on
 Serial.print("dot ");
 digitalWrite(13, HIGH);
 delay(1000);
@@ -264,7 +258,7 @@ digitalWrite(13, LOW);
 delay(1000);
 }
 
-void dash() { // defining the dash function as the light being on for three seconds
+void dash() { // defining the dash function as both lights being on
 Serial.print("dash ");
 digitalWrite(13, HIGH);
 digitalWrite(10, HIGH);
@@ -275,5 +269,5 @@ delay(1000);
 }
 
 void wait() { // defining the wait function 
-  delay(3000); // between letters is two second delay
+  delay(3000); // between letters is three second delay
 } 
