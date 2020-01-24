@@ -1,9 +1,10 @@
+```.ino
 // This program converts Morse code to English using an LCD display. 
 
 // include the library code:
 #include <LiquidCrystal.h>
 int index = 0; 
-String keyboard[]={"RESET", ".-", "-...","-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "DEL"};
+String keyboard[]={"RESET", ".-", "-...","-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "DEL"}; // here, we edited the keyboard to have the words in morse rather than in a traditional English alphabet
 String text = "";
 String chosen = "";
 int numOptions = 29;
@@ -30,7 +31,7 @@ void loop() {
   lcd.setCursor(0, 0);
   lcd.print(keyboard[index]);
   lcd.setCursor(0, 1);
-  lcd.print(chosen); // CHANGE TEXT TO TRANSLATED
+  lcd.print(chosen); // printing the translated/chosen string on the second line of the LCD
   delay(100);
 }
 
@@ -67,24 +68,22 @@ void selected(){
     }
     else if (key == "RESET")
     {
-      chosen = "";
+      chosen = ""; //resets chosen string to nothing, effectively resetting the system
     }
     else{
-      text += key;
-      convert();
+      text += key; // immediately converts the letter whenever it is added
+      convert(); // up until here, the system is very similar to the English input system in the method of inputting letters
     }
     index = 0; //restart the index
   }
 }
 
-void convert() {
-  Serial.print("Starting conversion");
-  lcd.setCursor(0, 1);
-  if (text == ".-" ) {
-    String key = "A"; 
+void convert() { // defining the conversion/translation function 
+  if (text == ".-" ) { // if else statements used because switch cases proved difficult when comparing entire strings
+    String key = "A"; // if text = .-, then the letter is A. adds A to the chosen string, displayed immediately on the second row of the LCD
     chosen += key;
   }
-  else if (text == ".-" ) {
+  else if (text == ".-" ) { // repreats for every letter
     String key = "B"; 
     chosen += key;
   }
@@ -184,5 +183,6 @@ void convert() {
     String key = "Z";
     chosen += key; 
   }
-  text = "";
+  text = ""; // resets text at the end of each translation in order to prevent repetition of letters
 }
+```
