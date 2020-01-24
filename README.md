@@ -55,15 +55,27 @@ Design
 
 My task specifically here is to ask as the translator on planet Earth, meaing that I need to be able to translate between morse code and English. That would mean that my team is responsible solely for utilizing two buttons to input as English and transmit and translate into morse code. I would also need to be able to receive and translate and morse code. Then, this would be displayed through the two LED outputs. I would not, however, be responsible for any of the components related to the "binary" rectangle on the left side of the Arduino as pictured in Figure 1.  
 
+**Flow Diagrams:**
+
+Flow diagrams are a great way to outline the logic for a particular program and make sure that you know the steps necessary. We did this for our English to morse and morse to English translation programs in order to provide guidance throughout the whole process. 
+
+![English to Morse Flowchart](EnglishMorseFLOWCHART.png)
+
+**Fig. 2:** The flowchart above shwos the logical process to take English and communicate it through Morse code using two lights.
+
+![Morse to English Flowchart](MorseEnglishFLOWCHART.png)
+
+**Fig. 3:** The flowchart above shows the logical process to take Morse and communicate it into English on the LCD display.
+
 **Testing Plan:** 
 
 ![Morse to English Translation Test](MTE.png)
 
-**Fig. 2:** The testing protoccol for ensuring that the Morse to English translation system functions properly. This test would make sure that the letters are able to come up on the screen and that both the delete and reset function works correctly. This protoccol will be used in the evaluation section. 
+**Fig. 4:** The testing protoccol for ensuring that the Morse to English translation system functions properly. This test would make sure that the letters are able to come up on the screen and that both the delete and reset function works correctly. This protoccol will be used in the evaluation section. 
 
 ![English to Morse Translation Test](ETM.png)
 
-**Fig. 3:** The testing protoccol for ensuring that the English to Morse translation system functions properly. This test would make sure that the letters are able to be communicated through the two LEDs and that the delete function works corrrectly. This protoccol will be used in the evaluation section. 
+**Fig. 5:** The testing protoccol for ensuring that the English to Morse translation system functions properly. This test would make sure that the letters are able to be communicated through the two LEDs and that the delete function works corrrectly. This protoccol will be used in the evaluation section. 
 
 
 **Modern C:**
@@ -108,7 +120,7 @@ How many led lights do you need to show the numbers from 1 to 15? Have two led l
 We began to answer this question by seeing how Arduino can be used to make a single LED flash. Here, we can see an LED flashing: 
 
 ![](IMB_qgi5zR.GIF)
-**Fig. 2:** This gif shows a single LED flashing, run on the code below.
+**Fig. 6:** This gif shows a single LED flashing, run on the code below.
 
 While Fig 2 only simply shows a single flash, the program can be adjusted for additional LEDs and also for different timed pulses of light. The code is quite simple for something such as a single light flash:
 ```.ino
@@ -160,13 +172,13 @@ Using this table, we can create equations for each LED in the seven segment numb
 
 ![Seven Segment Number](sevenSegment.png)
 
-**Fig. 3:** A seven segment number with the proper corresponding letters to Table 2. 
+**Fig. 7:** A seven segment number with the proper corresponding letters to Table 2. 
 
 When you make equations using the logic gates learned earlier, you can form one individual equation and then put set that equal to a boolean to minimize the number of lines needed to code the program [5](Citations). The following code effectively uses logic gates to make a system which lights up a seven-segment number by using three inputs (buttons; base three system) and uses binary. The logic gates used to create this equations are shown here:
 
 ![Logic Gates](logicGates.png)
 
-**Fig. 4:** The logic gates as shown above can address a variety of different functions and are necessary to create an efficient seven segment display [6](Citations). 
+**Fig. 8:** The logic gates as shown above can address a variety of different functions and are necessary to create an efficient seven segment display [6](Citations). 
 
 Below is the code for lighting up a seven segment number using a base three system. 
 
@@ -235,7 +247,7 @@ void loop()
 Here is the circuit for the code above: 
 ![Seven Segment Circuit](sevenSegmentCircuit.png)
 
-**Fig. 5:** The circuit used to run a seven segment display on, compatible with the code as seen above. 
+**Fig. 9:** The circuit used to run a seven segment display on, compatible with the code as seen above. 
 
 **6. The Machine Cycle:**
 
@@ -266,7 +278,7 @@ Another crucial part of this program is the interruptions [8](Citations). Rather
 The code below can also be represented with the following flow diagram: 
 ![Diagram for English Input](system.png)
 
-**Fig. 6:** The flow diagram for the code below. Interrupt functions, while they are not if functions, are represented in this manner because of their similar usage. It is important to note, however, that interrupt functions actually are waiting for, say, x, to happen, rather than constantly checking if x has happened. Thus, using these interrupt functions makes our program not only more simple but also more efficient. 
+**Fig. 10:** The flow diagram for the code below. Interrupt functions, while they are not if functions, are represented in this manner because of their similar usage. It is important to note, however, that interrupt functions actually are waiting for, say, x, to happen, rather than constantly checking if x has happened. Thus, using these interrupt functions makes our program not only more simple but also more efficient. 
 
 ```.ino
 // include the library code:
@@ -396,7 +408,7 @@ Of course, in order to develop a translation program, we needed to have a firm g
 
 ![Morse Table](morseTable.png)
 
-**Fig. #:** Above is a table showing all of the respective morse translations for numbers and the English alphabet. We used these standards within our code.
+**Fig. 11:** Above is a table showing all of the respective morse translations for numbers and the English alphabet. We used these standards within our code.
 
 **Developing Code:** 
 
@@ -459,7 +471,7 @@ When testing this code, it proved very useful to have a circuit already complete
 
 ![English to Morse Circuit](ETMCircuitry.png)
 
-**Fig #:** The Tinkercad simulation circuit used to perform testing throughout the development process.
+**Fig. 12:** The Tinkercad simulation circuit used to perform testing throughout the development process.
 
 The code above successfully is able to communicate messages through morse code. There were certainly some difficulties when coding it, however. Firstly, finding a way to properly find the length of the string "text" proved difficult. We were using the incorrect function for quite a while until finally discovering that it is text.length. In addition, because some variables were named to be "length," the system got confused and was not able to properly define them. Lastly, we had some problems with brackets when putting all of our code together. Because we had coded the added translation functionality on a shared Google Docs, many of the brackets got jumbled up when pasting in the code. This caused it not to work, helping us to learn the importance of organization.
 
@@ -467,7 +479,7 @@ Other than that, coding this translation program was fairly simple because the E
 
 ![](ETMsmallGIF.gif)
 
-**Fig #:** This GIF shows the English to Morse translation system translating the word "TEST." It can be slightly difficult to see the first "T" communicated through the lights. 
+**Fig. 13:** This GIF shows the English to Morse translation system translating the word "TEST." It can be slightly difficult to see the first "T" communicated through the lights. 
 
 **9. Morse to English Translation System:**
 
@@ -495,13 +507,13 @@ We again were able to test this program on Tinkercad. The circuit itself was alm
 
 ![Morse to English Circuit](MTECircuitry.png)
 
-**Fig #:** The circuitry we used to test the morse to English translation system. It is very similar to the English to morse circuit, except for its lack of two lights. 
+**Fig. 14:** The circuitry we used to test the morse to English translation system. It is very similar to the English to morse circuit, except for its lack of two lights. 
 
 When coding the morse to English translation system, we had no major challenges because of its similarity to the other translation systems. The main problem was figuring out how we would actually go about taking the input from the user and inputting the English. Because of the limited space on the LCD screen, we had to figure out how we wanted the system to work and how it would be shown on the LCD. However, once this was done, the system was able to be coded fairly quickly.
 
 ![](MTEfinal.gif)
 
-**Fig #:** This GIF shows the English to Morse translation system translating the word "TEST." It can be slightly difficult to see the first "T" communicated through the lights. 
+**Fig. 15:** This GIF shows the English to Morse translation system translating the word "TEST." It can be slightly difficult to see the first "T" communicated through the lights. 
 
 **10. Manual**
 
