@@ -381,87 +381,17 @@ Using the English input system, there were just a few edits which needed to be m
 2. Flash the lights according to the morse code (dash = both lights on; dot = one light on)
 3. When finished, reset text, thus allowing the user to continue entering more. 
 
-The code for this can be pictured below.
+Since a majority of the code we created is similar to the English input system as shown above, only snippets are shown in order to help users understand the logic. The full code can be found inside of the "finalScripts" folder in this Unit 2 Repository. 
 
 ```.ino
-// This program converts English into morse code, communicated through two LEDs. Both LEDs being on represents a dash while one LED represents a dot. 
-
-#include <LiquidCrystal.h>
-int index = 0; 
-// add all the letters and digits to the keyboard
-String keyboard[]={"A", "B", "SENT", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "DEL"};
-String text = "";
-int numOptions = 28;
-int i = 0;
-
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 5, 4, 9, 8);
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(13, OUTPUT);
-  pinMode(10, OUTPUT);
-  // set up the LCD's number of columns and rows:
-  lcd.begin(16, 2);
-  // Print a message to the LCD.
-  attachInterrupt(0, changeLetter, RISING); //button A in port 2
-  attachInterrupt(1, selected, RISING); //button B in port 3
-}
-
-void loop() {
-  // set the cursor to column 0, line 1
-  // (note: line 1 is the second row, since counting begins with 0):
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print(keyboard[index]);
-  lcd.setCursor(0, 1);
-  lcd.print(text);
-  delay(100);
-}
-
-//This function changes the letter in the keyboard
-void changeLetter(){
-  static unsigned long last_interrupt_time = 0;
-  unsigned long interrupt_time = millis();
-  if (interrupt_time - last_interrupt_time > 200)
-  {
-  
-    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
-    index++;
-      //check for the max row number
-    if(index==numOptions){
-      index=0; //loop back to first row
-    } 
- }
-}
-
-//this function adds the letter to the text or send the msg
-void selected(){
-  static unsigned long last_interrupt_time = 0;
-  unsigned long interrupt_time = millis();
-  if (interrupt_time - last_interrupt_time > 200)
-  {
-  
-    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
-    
-    String key = keyboard[index];
-    if (key == "DEL")
-    {
-      int len = text.length();
-      text.remove(len-1);
-    }
     else if(key == "SENT")
     {
       sent(); // addition of sent(); redirects program to separate function, causing translation to initiate
       text=""; // all of the code up until this section is the exact same as from the English input system detailed above
-    }
-    else{
-      text += key;
-    }
-    index = 0; //restart the index
-  }
-}
- 
+```
+This portion of the code is saying that if the user selects the key "SENT," they will be redirected to a function called sent. This function is detailed below.
+
+```.ino
 void sent() { // defining sent function
       
 int strLen = text.length(); // setting len to length to text
@@ -473,169 +403,10 @@ case 'A': // each case is checking if the letter of the "text" string is equal t
   dash();
   wait();
   break;
-case 'B':
-  dash();
-  dot();
-  dot();
-  dot();
-  wait();
-  break;
-case 'C': 
-  dash();
-  dot();
-  dash();
-  dot();
-  wait();
-  break;
-case 'D':
-  dash();
-  dot();
-  dot();
-  wait();
-  break;
-case 'E':
-  dot();
-  wait();
-  break;
-case 'F': 
-  dot();
-  dot();
-  dash();
-  dot();
-  wait();
-  break;
-case 'G':
-  dash();
-  dash();
-  dot();
-  wait();
-  break;
-case 'H':
-  dot();
-  dot();
-  dot();
-  dot();
-  wait();
-  break;
-case 'I':
-  dot();
-  dot();
-  wait();
-  break;
-case 'J':
-  dot();
-  dash();
-  dash();
-  dash();
-  wait();
-  break;
-case 'K':
-  dash();
-  dot();
-  dash();
-  wait();
-  break;
-case 'L':
-  dot();
-  dash();
-  dot();
-  dot();
-  wait();
-  break;
-case 'M':
-  dash();
-  dash();
-  wait();
-  break;
-case 'N':
-  dash();
-  dot();
-  wait();
-  break;
-case 'O':
-  dash();
-  dash();
-  dash();
-  wait();
-  break;
-case 'P':
-  dot();
-  dash();
-  dash();
-  dot();
-  wait();
-  break;
-case 'Q':
-  dash();
-  dash();
-  dot();
-  dash();
-  wait();
-  break;
-case 'R':
-  dot();
-  dash();
-  dot();
-  wait();
-  break;
-case 'S':
-  dot();
-  dot();
-  dot();
-  wait();
-  break;
-case 'T':
-  dash();
-  wait();
-  break;
-case 'U':
-  dot();
-  dot();
-  dash();
-  wait();
-  break;
-case 'V':
-  dot();
-  dot();
-  dot();
-  dash();
-  wait();
-  break;
-case 'W':
-  dot();
-  dash();
-  dash();
-  wait();
-  break;
-case 'X':
-  dash();
-  dot();
-  dot();
-  dash();
-  wait();
-  break;
-case 'Y':
-  dash();
-  dot();
-  dash();
-  dash();
-  wait();
-  break;
-case 'Z': 
-  dash();
-  dash();
-  dot();
-  dot();
-  wait();
-  break; 
-case ' ':
-  digitalWrite(13, LOW);
-  delay(4000);
-if (i < strLen - 1) {  // when all letters have been translated, the sent function is complete
- Serial.print("done");
-} 
-  }}}
+```
+This function, sent, utilizes a for loop to cycle through each letter of the selected "text" string. Then, using a switch case, we were able to compare the letter and perform the correct light functions depending on that. This snippet shown above is missing the letters B-Z solely to reduce repetition.
 
+```.ino
 void dot() {  // defining the dot function as one light being on
 Serial.print("dot ");
 digitalWrite(13, HIGH);
@@ -658,6 +429,7 @@ void wait() { // defining the wait function
   delay(3000); // between letters is three second delay
 } 
 ```
+Lastly, defining the functions of dot, dash, and wait is one of the most important parts of this code. This enables us to avoid repetition and easily edit the code. 
 
 When testing this code, it proved very useful to have a circuit already complete on Tinkercad. This way, we could perform testing outside of the classroom when we did not have access to an Arduino.
 
@@ -675,196 +447,25 @@ Other than that, coding this translation program was fairly simple because the E
 
 **8. Morse to English Translation System:**
 
-Having already finished the English to morse translation system, the morse to English translation system was easier because we could use a similar organization and format. Knowing this, we quickly came up with the following code:
+Having already finished the English to morse translation system, the morse to English translation system was easier because we could use a similar organization and format. Knowing this, we were able to quickly come up with code. Below is some snippets of crucical portions of our code. The entirity of the program can be found inside of the "finalScripts" folder, located iwthin this Unit 2 Repository.
 
 ```.ino
-// This program converts Morse code to English using an LCD display. 
+String keyboard[]={"RESET", ".-", "-...","-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "DEL"}; 
+``` 
+Here, we edited the keyboard to have the words in morse rather than in a traditional English alphabet
 
-// include the library code:
-#include <LiquidCrystal.h>
-int index = 0; 
-String keyboard[]={"RESET", ".-", "-...","-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "DEL"}; // here, we edited the keyboard to have the words in morse rather than in a traditional English alphabet
-String text = "";
-String chosen = "";
-int numOptions = 29;
-int i = 0;
+We later wrote `lcd.print(chosen);` within the void loop in order to continuously print the translated string on the second line of the LCD.
 
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 5, 4, 9, 8);
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(13, OUTPUT);
-  pinMode(10, OUTPUT);
-  // set up the LCD's number of columns and rows:
-  lcd.begin(16, 2);
-  // Print a message to the LCD.
-  attachInterrupt(0, changeLetter, RISING);//button A in port 2
-  attachInterrupt(1, selected, RISING);//button B in port 3
-}
-
-void loop() {
-  // set the cursor to column 0, line 1
-  // (note: line 1 is the second row, since counting begins with 0):
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print(keyboard[index]);
-  lcd.setCursor(0, 1);
-  lcd.print(chosen); // printing the translated/chosen string on the second line of the LCD
-  delay(100);
-}
-
-//This function changes the letter in the keyboard
-void changeLetter(){
-  static unsigned long last_interrupt_time = 0;
-  unsigned long interrupt_time = millis();
-  if (interrupt_time - last_interrupt_time > 200)
-  {
-  
-    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
-    index++;
-      //check for the max row number
-    if(index==numOptions){
-      index=0; //loop back to first row
-    } 
- }
-}
-
-//this function adds the letter to the text or send the msg
-void selected(){
-  static unsigned long last_interrupt_time = 0;
-  unsigned long interrupt_time = millis();
-  if (interrupt_time - last_interrupt_time > 200)
-  {
-  
-    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
-    
-    String key = keyboard[index];
-    if (key == "DEL")
-    {
-      int len = text.length();
-      text.remove(len-1);
-    }
-    else if (key == "RESET")
-    {
-      chosen = ""; //resets chosen string to nothing, effectively resetting the system
-    }
-    else{
-      text += key; // immediately converts the letter whenever it is added
-      convert(); // up until here, the system is very similar to the English input system in the method of inputting letters
-    }
-    index = 0; //restart the index
-  }
-}
-
-void convert() { // defining the conversion/translation function 
-  if (text == ".-" ) { // if else statements used because switch cases proved difficult when comparing entire strings
-    String key = "A"; // if text = .-, then the letter is A. adds A to the chosen string, displayed immediately on the second row of the LCD
+```.ino 
+void convert() { 
+  if (text == ".-" ) {
+    String key = "A";
     chosen += key;
   }
-  else if (text == ".-" ) { // repreats for every letter
-    String key = "B"; 
-    chosen += key;
-  }
-  else if (text == "-.-.") {
-    String key = "C"; 
-    chosen += key;
-  }
-  else if (text == "-..") {
-    String key = "D"; 
-    chosen += key;
-  }
-  else if (text == ".") {
-    String key = "E"; 
-    chosen += key;
-  }
-  else if (text == "..-.") {
-    String key = "F"; 
-    chosen += key;
-  }
-  else if (text == "--.") {
-    String key = "G";
-    chosen += key;    
-  }
-  else if (text == "....") {
-    String key = "H"; 
-    chosen += key;
-  }
-  else if (text == "..") {
-    String key = "I"; 
-    chosen += key;
-  }
-  else if (text == ".---") {
-    String key = "J"; 
-    chosen += key;
-  }
-  else if (text == "-.-") {
-    String key = "K"; 
-    chosen += key;
-  }
-  else if (text == ".-..") {
-    String key = "L"; 
-    chosen += key;
-  }
-  else if (text == "--") {
-    String key = "M"; 
-    chosen += key;
-  }
-  else if (text == "-.") {
-    String key = "N"; 
-    chosen += key;
-  }
-  else if (text == "---") {
-    String key = "O"; 
-    chosen += key;
-  }
-  else if (text == ".-" ) {
-    String key = "P"; 
-    chosen += key;
-  }
-  else if (text == "-.-.") {
-    String key = "Q"; 
-    chosen += key;
-  }
-  else if (text == "-..") {
-    String key = "R"; 
-    chosen += key;
-  }
-  else if (text == ".") {
-    String key = "S"; 
-    chosen += key;
-  }
-  else if (text == "..-.") {
-    String key = "T"; 
-    chosen += key;
-  }
-  else if (text == "--.") {
-    String key = "U"; 
-    chosen += key;
-  }
-  else if (text == "...-") {
-    String key = "V"; 
-    chosen += key;
-  }
-  else if (text == ".--") {
-    String key = "W"; 
-    chosen += key;
-  }
-  else if (text == "-..-") {
-    String key = "X"; 
-    chosen += key;
-  }
-  else if (text == "-.--") {
-    String key = "Y";
-    chosen += key;
-  }
-  else if (text == "--..") {
-    String key = "Z";
-    chosen += key; 
-  }
-  text = ""; // resets text at the end of each translation in order to prevent repetition of letters
+  text = ""; 
 }
 ```
+The code above shows the actual process used to convert from Morse to English. It compared each text and then communicated the correct according letter. The snippet above is missing the if else statements for B-Z; it is shown solely to give an idea fo how this system works. Lastly, it is crucial to redefine text as nothing in order to prevent repetition of letters.
 
 We again were able to test this program on Tinkercad. The circuit itself was almost identical to the circuit for English to morse; however, it lacked the two lights used to convey the morse code.
 
@@ -878,7 +479,9 @@ When coding the morse to English translation system, we had no major challenges 
 
 **Fig #:** This GIF shows the English to Morse translation system translating the word "TEST." It can be slightly difficult to see the first "T" communicated through the lights. 
 
+**8. Manual**
 
+This system, despite being quite simplistic, has a manual on proper usage. This can be found in the "information" folder of this repository.
 
  
 Evaluation
