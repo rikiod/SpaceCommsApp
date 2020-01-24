@@ -233,7 +233,17 @@ Here is the circuit for the code above:
 
 **5. The Machine Cycle:**
 
-The machine cycle is 
+The machine cycle is the cycle that a processor runs whenever an instruction is given. It is the most basic foundation for the central processing unit (CPU). Modern CPUs run millions of these cycles per second. The cycle consists of three functions:
+1. Fetch
+The computer fetches the instruction from the RAM. 
+
+2. Decode
+When decoding, there is always a marker that says what the action to take is. Then, the rest of the message consists of the actual data to perform the action on.
+
+3. Execute
+From here, the actual action can be performed.
+
+Within the CPU, registers (very small memory storage containers) are used in order to house the different instructions and data.
 
 **6. English Input System:**
 
@@ -499,18 +509,17 @@ Evaluation
 
 **Table 6:** The completion of the success criteria as outline in the [planning](#Planning) stage of this document.
 
-![Fulfillment on Success Criteria](criteria.png)
+![Fulfillment of Success Criteria](criteria.png)
 
-The infrastructure for this project was completed as seen by how the operators were able to communicate in English, there were only two inputs, and lights/buzzers have been used sparingly and efficiently. While we weren't able to communicate in morse and binary between the planetary bodies yet, we were able to create the infrastructure for creating these programs, This provides us room in the future to continue developing these sections and as a result, meeting our client's needs. 
-
-As of right now, our program has the English input system in which two inputs are used -- the program and the circuitry have both been documented for this in the development section. 
+The infrastructure for this project was completed as seen by how the operators were able to communicate in English, there were only two inputs, and lights/buzzers have been used sparingly and efficiently. Most importantly, communication was possible between the two planets, one of the most important parts of our program. From this, we can see that all of the success criteria have been fulfilled.
 
 **Future Improvements:**
-While this project has been fairly fleshed out, there is still a lot of work that needs to be done in order to achieve full functionality. Firstly, actually establishing a translation system from English to binary and morse code is necesarry to finish the communication system. While the binary translation formula has been researched, further information on morse code needs to be gathered. From there, this translation system needs to be incorporated with the rest of the already developed code. 
 
-Once all of these success criteria are finished, there are other aspects of the program which could be simply improved for the future. Firstly, efficiency could be improved so that the words per minute communicated would be increased. This could be done by simply increasing the number of inputs or, within the English input system, making it so that one can cycle through the arrays by going either left or right instead of just right. This would make it quicker to reach the wanted character and then make messages sent quicker.
+While all of the success criteria have been met, there are still other aspects in which this program would be improved. Firstly, efficiency could be improved so that the rate at which words are communicated is increased. This could be done by increasing the number of inputs or designing the English input system to minimize the actions needed to be taken to reach the correct letter (perhaps using a matrix would work well). Another way to increase this words per minute would be an autopredictive system for words. This could utilize patterns in phrases or artifical intelligence to predict the wanted word or sentence, thus making the system more efficient.
 
-In addition, an autopredictive system for words would improve the system. This system could use patterns in phrases or artificial intelligence to predict the wanted word or sentence, thus making the system more efficient. 
+Making the hardware more resilient would also prove useful. Because we are using an Arduino where the wires are easily disconnected from their proper ports, putting this hardware inside more of a solid housing would help to ensure that the program works in the harsh conditions of other planets.
+
+Lastly, if the English to morse and morse to English translation programs were merged together into one program, this would make it easier for the programs to be executed. This way, the program wouldn't constantly have to be changed and the efficiency would increase. 
 
 Citations
 ---------
