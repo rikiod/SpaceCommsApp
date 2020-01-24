@@ -92,7 +92,7 @@ Development
 -----------
 **1. Counting with binary:**
 
-We first learned to count with binary [4](#Citations), a necessary step for converting data from English to binary and vice versa. Essentially, in binary, you start off by representing zero as one. Then, whenever the last digit is zero, you change the number to one. 
+We first learned to count with binary [4](#Citations), a necessary step for converting data from English to binary and vice versa. Essentially, in binary, you start off by representing zero as one. Then, whenever the last digit is zero, you change the number to one. For other numerical systems such as base four, the base is four rather than two as it is with binary. Thus, you would replace the last digit, three, with zero. This pattern applies similarly to any other base numerical counting systems.
 
 
 **2. Representing numbers in binary through LED lights:**
@@ -373,6 +373,14 @@ After developing this common standard, code needs to be developed. There are six
 2. Use a for loop to cycle through each letter within the user inputted "text" string.
 3. Use a switch case to see which letter to translate, then transmit it simultaneously using the light.
 4. Repeat until all of the letters within the string are sent. 
+
+**What is Morse?**
+
+Of course, in order to develop a translation program, we needed to have a firm grasp on what Morse code really is. It uses a series of dots and dashes in order to convey letters and numbers. 
+
+![Morse Table](morseTable.png)
+
+**Fig. #:** Above is a table showing all of the respective morse translations for numbers and the English alphabet. We used these standards within our code.
 
 **Developing Code:** 
 
