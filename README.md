@@ -20,11 +20,13 @@ It's 2050. Humans have made it to Mars; however, communication between Mars, the
 
 For Mars, the planet is only able to send and receive binary. For Earth, the planet is only able to send and receive morse code. The Moon, therefore, acts as a liason between the two planets and works to translate Morse code into binary or the opposite. However, the operators in these planets can only understand English so each language must be translated into English before being transmitted. 
 
-I propose a new Arduino based system which would have a variety of functions as listed in the Success Criteria. This system hopes to be as simple to use as possible so it can easily be edited and also does not require a lot of resources, something necesarry in an unfamiliar and far planet. In addition, the system needs to be easy to initiate, making it simple enough to create on the Moon and Mars. 
+I propose a new Arduino based system which would have a variety of functions as listed in the Success Criteria. This system hopes to be as simple to use as possible so it can easily be edited and also does not require a lot of resources, something necesarry in an unfamiliar and far planet. In addition, the system needs to be easy to initiate, making it simple enough to create on the Moon and Mars. The Arduino also works for all sorts of operation systems (MacOS, Windows, Linux, etc.) and comes with open-source software that allows us to run programs without having to pay extra for certain capabilities. 
 
 **Proposed Solution:**
 
 I will create a Modern C program to address these issues. Modern C is being used because NASA needs to further develop a communication system which makes efficient use of the limited supplies on the Moon and Mars and Modern C doesn't require very rugged hardware to be run. Modern C is also being used because of it's additionally capacities compared to Bash. As more of a modern language, it has many more capabilities and is able to run easily. Despite that it is slightly more complex than Bash, it will be used by primarily engineers and/or astronauts so this should not pose an issue. Lastly, using Modern C is more advantageous because of the resources available online and the fact that the language is what we are currently learning in class.  
+
+Additionally, we are using GitHub and Tinkercad for this project because of their extensive capabilities. GitHub allows us easily store all of our scripts and documentation. In addition, it's open-source nature allows us to share this information with others. Meanwhile, Tinkercad is especially helpful because it is free and it allows us to virtually simulate our programs on the Arduino. This way, we can test our programs even when we lack access to an Arduino.
 
 **Table 1:** Shows the differences between Modern C and Bash so that the two lanauges can be evaluated against each other.
 
